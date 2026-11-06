@@ -30,6 +30,15 @@ export function doesUserExist(dbData, memberId) {
     return !!user; // Returns true if found, false if undefined
 }
 
+// Default record for a user who is new to the database
+export function createUser(memberId) {
+    return {
+        user_id: memberId,
+        dailyCheckin: false,
+        coins: 0,
+    };
+}
+
 // Orchestrator function to handle adding a user safely
 export async function addUserToDataBase(memberId) {
     // 1. Pull the freshest state from the file
@@ -37,12 +46,7 @@ export async function addUserToDataBase(memberId) {
     
     // 2. Check if the user is already present
     if (!doesUserExist(database, memberId)) {
-        const newUser = {
-            user_id: memberId,
-            coins: 0,
-        };
-        
-        database.users.push(newUser);
+        database.users.push(createUser(memberId));
         
         // 3. Commit the change back to the file
         await updateDB(database);
