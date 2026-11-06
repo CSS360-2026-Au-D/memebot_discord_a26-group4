@@ -46,6 +46,15 @@ function formatHand(hand, hideSecondCard = false) {
     return hand.map(card => `${card.value}${card.suit}`).join(', ');
 }
 
+function canSplitPair(hand) {
+    if (hand.length !== 2) return false;
+    const v1 = hand[0].value;
+    const v2 = hand[1].value;
+    if (v1 === v2) return true;
+    const tens = ['10', 'J', 'Q', 'K'];
+    return tens.includes(v1) && tens.includes(v2);
+}
+
 export default {
     name: 'messageCreate',
     async execute(message) {
@@ -54,118 +63,265 @@ export default {
         if (message.content.toLowerCase() !== '!blackjack') return;
 
         const deck = createDeck();
-        const playerHand = [deck.pop(), deck.pop()];
+        let hands = [[deck.pop(), deck.pop()]];
         const botHand = [deck.pop(), deck.pop()];
 
-        let playerScore = calculateScore(playerHand);
-        let botVisibleScore = calculateScore([botHand[0]]); 
+        let currentHandIdx = 0;
+        let hasSplit = false;
 
-        if (playerScore === 21) {
-            return message.reply({ content: `♠️♥️ **BLACKJACK!** You hit 21 immediately! You win! 🎉\nYour Hand: ${formatHand(playerHand)}` });
+        let initialScore = calculateScore(hands[0]);
+        let botVisibleScore = calculateScore([botHand[0]]);
+
+        if (initialScore === 21) {
+            return message.reply({ content: `♠️♥️ **BLACKJACK!** You hit 21 immediately! You win! 🎉\nYour Hand: ${formatHand(hands[0])}` });
         }
+
+        let canSplit = canSplitPair(hands[0]);
 
         const embed = new EmbedBuilder()
             .setTitle('♠️♥️ Blackjack ♣️♦️')
             .setColor('Blurple')
-            .setDescription('Type **hit** to draw another card, or **stand** to keep your hand.')
+            .setDescription(
+                canSplit
+                    ? 'Type **hit** to draw, **stand** to keep your hand, or **split** to split your pair.'
+                    : 'Type **hit** to draw another card, or **stand** to keep your hand.'
+            )
             .addFields(
-                { name: `Your Hand (Score: ${playerScore})`, value: formatHand(playerHand), inline: true },
+                { name: `Your Hand (Score: ${initialScore})`, value: formatHand(hands[0]), inline: true },
                 { name: `Bot's Hand (Score: ${botVisibleScore})`, value: formatHand(botHand, true), inline: true }
             );
 
         const gameMessage = await message.reply({ embeds: [embed] });
 
-        const filter = (m) => m.author.id === message.author.id && ['hit', 'stand'].includes(m.content.toLowerCase());
+        const filter = (m) => {
+            if (m.author.id !== message.author.id) return false;
+            const choice = m.content.toLowerCase();
+            if (['hit', 'stand'].includes(choice)) return true;
+            if (choice === 'split' && canSplit) return true;
+            return false;
+        };
+
         const collector = message.channel.createMessageCollector({ filter, time: 60000 });
 
-        collector.on('collect', async (m) => {
-            const choice = m.content.toLowerCase();
-            
-            m.delete().catch(() => {});
+        async function resolveGame() {
+            let botScore = calculateScore(botHand);
+            const allBust = hands.every(h => calculateScore(h) > 21);
 
-            if (choice === 'hit') {
-                playerHand.push(deck.pop());
-                playerScore = calculateScore(playerHand);
-
-                if (playerScore > 21) {
-                    let botScore = calculateScore(botHand);
-                    embed.setColor('Red')
-                        .setDescription('💥 **BUST!** You went over 21. The bot wins.')
-                        .setFields(
-                            { name: `Your Hand (Score: ${playerScore})`, value: formatHand(playerHand), inline: true },
-                            { name: `Bot's Hand (Score: ${botScore})`, value: formatHand(botHand), inline: true }
-                        );
-                    
-                    await gameMessage.edit({ embeds: [embed] });
-                    collector.stop('finished');
-                } else if (playerScore === 21) {
-                    let botScore = calculateScore(botHand);
-                    
-                    while (botScore < 17) {
-                        botHand.push(deck.pop());
-                        botScore = calculateScore(botHand);
-                    }
-
-                    let resultText = '';
-                    let color = 'Green';
-
-                    if (botScore === 21) {
-                        resultText = '🤝 **Push!** The bot also hit 21. It\'s a tie.';
-                        color = 'Yellow';
-                    } else {
-                        resultText = '🎉 **You Win!** You hit exactly 21!';
-                    }
-
-                    embed.setColor(color)
-                        .setDescription(resultText)
-                        .setFields(
-                            { name: `Your Hand (Score: ${playerScore})`, value: formatHand(playerHand), inline: true },
-                            { name: `Bot's Hand (Score: ${botScore})`, value: formatHand(botHand), inline: true } 
-                        );
-
-                    await gameMessage.edit({ embeds: [embed] });
-                    collector.stop('finished');
-                } else {
-                    embed.setFields(
-                        { name: `Your Hand (Score: ${playerScore})`, value: formatHand(playerHand), inline: true },
-                        { name: `Bot's Hand (Score: ${botVisibleScore})`, value: formatHand(botHand, true), inline: true }
-                    );
-                    await gameMessage.edit({ embeds: [embed] });
-                }
-            } 
-            else if (choice === 'stand') {
-                let botScore = calculateScore(botHand);
-                
+            if (!allBust) {
                 while (botScore < 17) {
                     botHand.push(deck.pop());
                     botScore = calculateScore(botHand);
                 }
+            }
 
+            if (!hasSplit) {
+                const playerScore = calculateScore(hands[0]);
                 let resultText = '';
                 let color = 'Red';
 
-                if (botScore > 21) {
+                if (playerScore > 21) {
+                    resultText = '💥 **BUST!** You went over 21. The bot wins.';
+                    color = 'Red';
+                } else if (botScore > 21) {
                     resultText = '🎉 **BOT BUSTED!** You win!';
                     color = 'Green';
                 } else if (botScore > playerScore) {
                     resultText = '😔 **Bot Wins!** Better luck next time.';
+                    color = 'Red';
                 } else if (botScore < playerScore) {
-                    resultText = '🎉 **You Win!** Congratulations!';
+                    resultText = playerScore === 21 ? '🎉 **You Win!** You hit exactly 21!' : '🎉 **You Win!** Congratulations!';
                     color = 'Green';
                 } else {
-                    resultText = '🤝 **Push!** It\'s a tie.';
+                    resultText = "🤝 **Push!** It's a tie.";
                     color = 'Yellow';
                 }
 
                 embed.setColor(color)
                     .setDescription(resultText)
                     .setFields(
-                        { name: `Your Hand (Score: ${playerScore})`, value: formatHand(playerHand), inline: true },
-                        { name: `Bot's Hand (Score: ${botScore})`, value: formatHand(botHand), inline: true } 
+                        { name: `Your Hand (Score: ${playerScore})`, value: formatHand(hands[0]), inline: true },
+                        { name: `Bot's Hand (Score: ${botScore})`, value: formatHand(botHand), inline: true }
                     );
+            } else {
+                let anyWin = false;
+                let anyPush = false;
+                const fields = [];
 
-                await gameMessage.edit({ embeds: [embed] });
-                collector.stop('finished');
+                for (let i = 0; i < hands.length; i++) {
+                    const hScore = calculateScore(hands[i]);
+                    let res = '';
+
+                    if (hScore > 21) {
+                        res = '💥 **BUST!** (Lost)';
+                    } else if (botScore > 21) {
+                        res = '🎉 **Win!** (Bot Busted)';
+                        anyWin = true;
+                    } else if (hScore > botScore) {
+                        res = '🎉 **Win!**';
+                        anyWin = true;
+                    } else if (hScore < botScore) {
+                        res = '😔 **Lost**';
+                    } else {
+                        res = "🤝 **Push!** (Tie)";
+                        anyPush = true;
+                    }
+
+                    fields.push({
+                        name: `Hand ${i + 1} (Score: ${hScore})`,
+                        value: `${formatHand(hands[i])}\n${res}`,
+                        inline: true
+                    });
+                }
+
+                fields.push({
+                    name: `Bot's Hand (Score: ${botScore})`,
+                    value: formatHand(botHand),
+                    inline: true
+                });
+
+                let summary = '';
+                let finalColor = 'Red';
+                if (anyWin) {
+                    summary = '🎉 **Game Over!** You won on your split hand(s)!';
+                    finalColor = 'Green';
+                } else if (anyPush) {
+                    summary = "🤝 **Game Over!** You pushed with the bot.";
+                    finalColor = 'Yellow';
+                } else {
+                    summary = '😔 **Game Over!** The bot wins.';
+                    finalColor = 'Red';
+                }
+
+                embed.setColor(finalColor)
+                    .setTitle('♠️♥️ Blackjack (Split Results) ♣️♦️')
+                    .setDescription(summary)
+                    .setFields(fields);
+            }
+
+            await gameMessage.edit({ embeds: [embed] });
+            collector.stop('finished');
+        }
+
+        function updateSplitPlayingEmbed(statusMessage = '') {
+            const fields = [];
+            for (let i = 0; i < hands.length; i++) {
+                const score = calculateScore(hands[i]);
+                let label = '';
+                if (i === currentHandIdx) {
+                    label = ' 👉 **[Playing]**';
+                } else if (i < currentHandIdx) {
+                    label = score > 21 ? ' 💥 [Bust]' : ' 🛑 [Stood]';
+                } else {
+                    label = ' ⏳ [Waiting]';
+                }
+
+                fields.push({
+                    name: `Hand ${i + 1} (Score: ${score})${label}`,
+                    value: formatHand(hands[i]),
+                    inline: true
+                });
+            }
+
+            fields.push({
+                name: `Bot's Hand (Score: ${botVisibleScore})`,
+                value: formatHand(botHand, true),
+                inline: true
+            });
+
+            const promptText = `Playing **Hand ${currentHandIdx + 1}** of ${hands.length}.\nType **hit** to draw, or **stand** to keep.`;
+            const desc = statusMessage ? `${statusMessage}\n\n${promptText}` : promptText;
+
+            embed.setTitle('♠️♥️ Blackjack (Split) ♣️♦️')
+                .setColor('Blurple')
+                .setDescription(desc)
+                .setFields(fields);
+        }
+
+        collector.on('collect', async (m) => {
+            const choice = m.content.toLowerCase();
+            m.delete().catch(() => {});
+
+            if (choice === 'split' && canSplit) {
+                hasSplit = true;
+                canSplit = false;
+
+                const cardA = hands[0][0];
+                const cardB = hands[0][1];
+                hands = [
+                    [cardA, deck.pop()],
+                    [cardB, deck.pop()]
+                ];
+                currentHandIdx = 0;
+
+                // Check if Hand 1 immediately hit 21
+                if (calculateScore(hands[0]) === 21) {
+                    currentHandIdx = 1;
+                    if (calculateScore(hands[1]) === 21) {
+                        return await resolveGame();
+                    }
+                    updateSplitPlayingEmbed('🌟 **Hand 1 hit 21!** Moved to Hand 2.');
+                    return await gameMessage.edit({ embeds: [embed] });
+                }
+
+                updateSplitPlayingEmbed('✂️ **Split!** You now have two hands.');
+                return await gameMessage.edit({ embeds: [embed] });
+            }
+
+            // Once any action is taken (hit or stand), split is no longer an option
+            canSplit = false;
+
+            if (!hasSplit) {
+                const playerHand = hands[0];
+
+                if (choice === 'hit') {
+                    playerHand.push(deck.pop());
+                    const playerScore = calculateScore(playerHand);
+
+                    if (playerScore >= 21) {
+                        return await resolveGame();
+                    }
+
+                    embed.setFields(
+                        { name: `Your Hand (Score: ${playerScore})`, value: formatHand(playerHand), inline: true },
+                        { name: `Bot's Hand (Score: ${botVisibleScore})`, value: formatHand(botHand, true), inline: true }
+                    );
+                    return await gameMessage.edit({ embeds: [embed] });
+                } else if (choice === 'stand') {
+                    return await resolveGame();
+                }
+            } else {
+                const currentHand = hands[currentHandIdx];
+
+                if (choice === 'hit') {
+                    currentHand.push(deck.pop());
+                    const currentScore = calculateScore(currentHand);
+
+                    if (currentScore > 21) {
+                        currentHandIdx++;
+                        if (currentHandIdx >= hands.length) {
+                            return await resolveGame();
+                        }
+                        updateSplitPlayingEmbed(`💥 **Hand ${currentHandIdx} BUSTED!**`);
+                        return await gameMessage.edit({ embeds: [embed] });
+                    } else if (currentScore === 21) {
+                        currentHandIdx++;
+                        if (currentHandIdx >= hands.length) {
+                            return await resolveGame();
+                        }
+                        updateSplitPlayingEmbed(`🎯 **Hand ${currentHandIdx} hit 21!**`);
+                        return await gameMessage.edit({ embeds: [embed] });
+                    } else {
+                        updateSplitPlayingEmbed();
+                        return await gameMessage.edit({ embeds: [embed] });
+                    }
+                } else if (choice === 'stand') {
+                    currentHandIdx++;
+                    if (currentHandIdx >= hands.length) {
+                        return await resolveGame();
+                    }
+                    updateSplitPlayingEmbed(`🛑 **Hand ${currentHandIdx} stood.**`);
+                    return await gameMessage.edit({ embeds: [embed] });
+                }
             }
         });
 
