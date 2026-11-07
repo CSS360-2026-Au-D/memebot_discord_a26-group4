@@ -92,7 +92,174 @@ classDiagram
 
 ### Diagram
 
-*Insert diagram here.*
+```mermaid
+flowchart TD
+    %% PAGE 1: Game Setup & Deal
+    subgraph SETUP ["Game Setup & Dealing"]
+        OpenGame["OPEN GAME"]
+        JoinTry[/"PLAYER TRIES TO JOIN"/]
+        EnoughCoins{"ENOUGH COINS?"}
+        UnableJoin["UNABLE TO JOIN"]
+        JoinGame["JOIN GAME"]
+        StartGame["START GAME"]
+        DesignateBlinds["DESIGNATE DEALER &<br/>BIG/SMALL BLIND"]
+        PlaceBets["BIG/SMALL BLIND PLACE<br/>CORRESPONDING BETS"]
+        ShuffleDeck["BUILD & SHUFFLE DECK"]
+        DealCards["DEAL EACH PLAYER 1 BY 1<br/>UNTIL EVERYONE REACHES 5 CARDS"]
+
+        OpenGame --> JoinGame
+        JoinTry --> EnoughCoins
+        EnoughCoins -- No --> UnableJoin
+        EnoughCoins -- Yes --> JoinGame
+        JoinGame --> StartGame
+        StartGame --> DesignateBlinds
+        DesignateBlinds --> PlaceBets
+        PlaceBets --> ShuffleDeck
+        ShuffleDeck --> DealCards
+    end
+
+    DealCards --> NextP1
+
+    %% PAGE 2: Betting Round 1
+    subgraph BET1 ["Betting Round 1"]
+        NextP1["NEXT PLAYER"]
+        InputAct1[/"PLAYER INPUT ACTION"/]
+        
+        %% Check Branch
+        CheckPot1{"HAS POT<br/>INCREASED?"}
+        CheckBB1{"IS PLAYER<br/>BIG BLIND?"}
+        
+        %% Fold Branch
+        RemoveP1["REMOVE PLAYER<br/>FROM GAME"]
+        
+        %% Call Branch
+        CallChips1{"ENOUGH<br/>CHIPS?"}
+        AllIn1["DESIGNATE 'ALL IN'<br/>AND REMOVE FROM BETTING"]
+        AllFoldCall1{"HAS EVERY PLAYER<br/>FOLDED OR CALLED?"}
+
+        %% Raise Branch
+        InputBet1[/"PLAYER INPUT BET"/]
+        RaiseChips1{"ENOUGH<br/>CHIPS?"}
+        IncPot1["INCREASE POT"]
+        EndBet1["END BET ROUND 1"]
+
+        NextP1 --> InputAct1
+        
+        InputAct1 -- "CHECK" --> CheckPot1
+        CheckPot1 -- "Yes" --> CheckBB1
+        CheckPot1 -- "No" --> NextP1
+        CheckBB1 -- "No" --> NextP1
+        CheckBB1 -- "Yes" --> EndBet1
+
+        InputAct1 -- "FOLD" --> RemoveP1
+        RemoveP1 --> AllFoldCall1
+
+        InputAct1 -- "CALL" --> CallChips1
+        CallChips1 -- "Yes" --> AllFoldCall1
+        CallChips1 -- "No" --> AllIn1
+        AllIn1 --> AllFoldCall1
+        
+        AllFoldCall1 -- "No" --> NextP1
+        AllFoldCall1 -- "Yes" --> EndBet1
+
+        InputAct1 -- "RAISE" --> InputBet1
+        InputBet1 --> RaiseChips1
+        RaiseChips1 -- "No" --> InputAct1
+        RaiseChips1 -- "Yes" --> IncPot1
+        IncPot1 --> NextP1
+    end
+
+    EndBet1 --> NextPDraw
+
+    %% PAGE 3: Draw Phase
+    subgraph DRAW ["Draw Phase"]
+        NextPDraw["NEXT PLAYER"]
+        ChangeCards{"CHANGE<br/>CARDS?"}
+        InputCards[/"PLAYER INPUT<br/>NUMBER OF CARDS"/]
+        DiscardDeal["DISCARD AND<br/>DEAL CARDS"]
+        AllChanged{"HAS EVERY PLAYER<br/>CHANGED OR SKIPPED?"}
+        EndDraw["END DRAW PHASE"]
+
+        NextPDraw --> ChangeCards
+        ChangeCards -- "YES" --> InputCards
+        InputCards --> DiscardDeal
+        DiscardDeal --> AllChanged
+        ChangeCards -- "NO" --> AllChanged
+        
+        AllChanged -- "NO" --> NextPDraw
+        AllChanged -- "YES" --> EndDraw
+    end
+
+    EndDraw --> NextP2
+
+    %% PAGE 4: Betting Round 2
+    subgraph BET2 ["Betting Round 2"]
+        NextP2["NEXT PLAYER"]
+        InputAct2[/"PLAYER INPUT ACTION"/]
+
+        %% Check Branch
+        CheckPot2{"HAS POT<br/>INCREASED?"}
+        
+        %% Bet Branch
+        BetPot2{"HAS POT<br/>INCREASED?"}
+
+        %% Fold Branch
+        RemoveP2["REMOVE PLAYER<br/>FROM GAME"]
+
+        %% Call Branch
+        CallChips2{"ENOUGH<br/>CHIPS?"}
+        AllIn2["DESIGNATE 'ALL IN'<br/>AND REMOVE FROM BETTING"]
+        AllFoldCall2{"HAS EVERY PLAYER<br/>FOLDED OR CALLED?"}
+
+        %% Raise/Bet Shared Input
+        InputBet2[/"PLAYER INPUT BET"/]
+        RaiseChips2{"ENOUGH<br/>CHIPS?"}
+        IncPot2["INCREASE POT"]
+        EndBet2["END BET ROUND 2"]
+
+        NextP2 --> InputAct2
+
+        InputAct2 -- "CHECK" --> CheckPot2
+        CheckPot2 -- "No" --> AllFoldCall2
+        CheckPot2 -- "Yes" --> NextP2
+
+        InputAct2 -- "BET" --> BetPot2
+        BetPot2 -- "No" --> InputBet2
+        BetPot2 -- "Yes" --> NextP2
+
+        InputAct2 -- "FOLD" --> RemoveP2
+        RemoveP2 --> AllFoldCall2
+
+        InputAct2 -- "CALL" --> CallChips2
+        CallChips2 -- "Yes" --> AllFoldCall2
+        CallChips2 -- "No" --> AllIn2
+        AllIn2 --> AllFoldCall2
+
+        AllFoldCall2 -- "NO" --> NextP2
+        AllFoldCall2 -- "YES" --> EndBet2
+
+        InputAct2 -- "RAISE" --> InputBet2
+        InputBet2 --> RaiseChips2
+        RaiseChips2 -- "No" --> NextP2
+        RaiseChips2 -- "Yes" --> IncPot2
+        IncPot2 --> NextP2
+    end
+
+    EndBet2 --> EvalHands
+
+    %% PAGE 5: Showdown & Resolution
+    subgraph SHOWDOWN ["Showdown & Pot Resolution"]
+        EvalHands["EVALUATE PLAYERS HANDS<br/>(handRank)"]
+        DetermineWinner["DETERMINE PLAYER WITH<br/>HIGHEST RANK HAND"]
+        IsAllIn{"IS WINNING PLAYER<br/>'ALL IN'?"}
+        AwardFull["AWARD FULL POT"]
+        AwardPartial["WINNER AWARDED FROM EACH<br/>PLAYERS BET UP TO THEIR LAST BET"]
+
+        EvalHands --> DetermineWinner
+        DetermineWinner --> IsAllIn
+        IsAllIn -- "NO" --> AwardFull
+        IsAllIn -- "YES" --> AwardPartial
+    end
 
 ---
 
