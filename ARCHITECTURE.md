@@ -94,162 +94,89 @@ classDiagram
 
 ```mermaid
 flowchart TD
-    %% Game Setup & Deal
-    subgraph SETUP ["Game Setup & Dealing"]
-        OpenGame["OPEN GAME"]
-        JoinTry[/"PLAYER TRIES TO JOIN"/]
-        EnoughCoins{"ENOUGH COINS?"}
-        UnableJoin["UNABLE TO JOIN"]
-        JoinGame["JOIN GAME"]
-        StartGame["START GAME"]
-        DesignateBlinds["DESIGNATE DEALER &<br/>BIG/SMALL BLIND"]
-        PlaceBets["BIG/SMALL BLIND PLACE<br/>CORRESPONDING BETS"]
-        ShuffleDeck["BUILD & SHUFFLE DECK"]
-        DealCards["DEAL EACH PLAYER 1 BY 1<br/>UNTIL EVERYONE REACHES 5 CARDS"]
-
-        OpenGame --> JoinGame
-        JoinTry --> EnoughCoins
-        EnoughCoins -- No --> UnableJoin
-        EnoughCoins -- Yes --> JoinGame
-        JoinGame --> StartGame
-        StartGame --> DesignateBlinds
-        DesignateBlinds --> PlaceBets
-        PlaceBets --> ShuffleDeck
-        ShuffleDeck --> DealCards
-    end
-
-    DealCards --> NextP1
+    %% Setup & Join
+    P_Join[/Player tries to join/] --> HasCoins{Enough coins?}
+    HasCoins -- No --> CantJoin[Unable to join]
+    HasCoins -- Yes --> JoinGame[Join game]
+    OpenGame[Open game] --> JoinGame
+    JoinGame --> StartGame[Start game]
+    StartGame --> AssignRoles[Designate Dealer & Big/Small Blind]
+    AssignRoles --> PlaceBlinds[Big/Small Blind place bets]
+    PlaceBlinds --> Shuffle[Build & shuffle deck]
+    Shuffle --> DealCards[Deal 1 by 1 until everyone has 5 cards]
 
     %% Betting Round 1
-    subgraph BET1 ["Betting Round 1"]
-        NextP1["NEXT PLAYER"]
-        InputAct1[/"PLAYER INPUT ACTION"/]
-        
-        CheckPot1{"HAS POT<br/>INCREASED?"}
-        CheckBB1{"IS PLAYER<br/>BIG BLIND?"}
-        
-        RemoveP1["REMOVE PLAYER<br/>FROM GAME"]
-        
-        CallChips1{"ENOUGH<br/>CHIPS?"}
-        AllIn1["DESIGNATE ALL IN<br/>AND REMOVE FROM BETTING"]
-        AllFoldCall1{"HAS EVERY PLAYER<br/>FOLDED OR CALLED?"}
+    DealCards --> R1_Next[Next player]
+    R1_Next --> R1_Act[/Player input action/]
 
-        InputBet1[/"PLAYER INPUT BET"/]
-        RaiseChips1{"ENOUGH<br/>CHIPS?"}
-        IncPot1["INCREASE POT"]
-        EndBet1["END BET ROUND 1"]
+    R1_Act -- Fold --> R1_Fold[Remove player from game]
+    R1_Fold --> R1_CheckEnd{Has every player folded or called?}
 
-        NextP1 --> InputAct1
-        
-        InputAct1 -- CHECK --> CheckPot1
-        CheckPot1 -- Yes --> CheckBB1
-        CheckPot1 -- No --> NextP1
-        CheckBB1 -- No --> NextP1
-        CheckBB1 -- Yes --> EndBet1
+    R1_Act -- Call --> R1_CallChips{Enough chips?}
+    R1_CallChips -- Yes --> R1_CheckEnd
+    R1_CallChips -- No --> R1_AllIn[Designate ALL IN & remove from betting]
+    R1_AllIn --> R1_CheckEnd
 
-        InputAct1 -- FOLD --> RemoveP1
-        RemoveP1 --> AllFoldCall1
+    R1_Act -- Raise --> R1_Bet[/Player input bet/]
+    R1_Bet --> R1_RaiseChips{Enough chips?}
+    R1_RaiseChips -- No --> R1_Next
+    R1_RaiseChips -- Yes --> R1_IncPot[Increase pot]
+    R1_IncPot --> R1_CheckEnd
 
-        InputAct1 -- CALL --> CallChips1
-        CallChips1 -- Yes --> AllFoldCall1
-        CallChips1 -- No --> AllIn1
-        AllIn1 --> AllFoldCall1
-        
-        AllFoldCall1 -- No --> NextP1
-        AllFoldCall1 -- Yes --> EndBet1
+    R1_Act -- Check --> R1_PotInc{Has pot increased?}
+    R1_PotInc -- Yes --> R1_Act
+    R1_PotInc -- No --> R1_IsBB{Is player Big Blind?}
+    R1_IsBB -- No --> R1_Next
+    R1_IsBB -- Yes --> EndR1[End bet round 1]
 
-        InputAct1 -- RAISE --> InputBet1
-        InputBet1 --> RaiseChips1
-        RaiseChips1 -- No --> InputAct1
-        RaiseChips1 -- Yes --> IncPot1
-        IncPot1 --> NextP1
-    end
-
-    EndBet1 --> NextPDraw
+    R1_CheckEnd -- No --> R1_Next
+    R1_CheckEnd -- Yes --> EndR1
 
     %% Draw Phase
-    subgraph DRAW ["Draw Phase"]
-        NextPDraw["NEXT PLAYER"]
-        ChangeCards{"CHANGE<br/>CARDS?"}
-        InputCards[/"PLAYER INPUT<br/>NUMBER OF CARDS"/]
-        DiscardDeal["DISCARD AND<br/>DEAL CARDS"]
-        AllChanged{"HAS EVERY PLAYER<br/>CHANGED OR SKIPPED?"}
-        EndDraw["END DRAW PHASE"]
-
-        NextPDraw --> ChangeCards
-        ChangeCards -- YES --> InputCards
-        InputCards --> DiscardDeal
-        DiscardDeal --> AllChanged
-        ChangeCards -- NO --> AllChanged
-        
-        AllChanged -- NO --> NextPDraw
-        AllChanged -- YES --> EndDraw
-    end
-
-    EndDraw --> NextP2
+    EndR1 --> D_Next[Next player]
+    D_Next --> D_Change{Change cards?}
+    D_Change -- Yes --> D_Input[/Player input number of cards/]
+    D_Input --> D_Deal[Discard and deal cards]
+    D_Deal --> D_AllDone{Has every player changed or skipped?}
+    D_Change -- No --> D_AllDone
+    D_AllDone -- No --> D_Next
+    D_AllDone -- Yes --> EndDraw[End draw phase]
 
     %% Betting Round 2
-    subgraph BET2 ["Betting Round 2"]
-        NextP2["NEXT PLAYER"]
-        InputAct2[/"PLAYER INPUT ACTION"/]
+    EndDraw --> R2_Next[Next player]
+    R2_Next --> R2_Act[/Player input action/]
 
-        CheckPot2{"HAS POT<br/>INCREASED?"}
-        BetPot2{"HAS POT<br/>INCREASED?"}
+    R2_Act -- Fold --> R2_Fold[Remove player from game]
+    R2_Fold --> R2_CheckEnd{Has every player folded or called?}
 
-        RemoveP2["REMOVE PLAYER<br/>FROM GAME"]
+    R2_Act -- Call --> R2_CallChips{Enough chips?}
+    R2_CallChips -- Yes --> R2_CheckEnd
+    R2_CallChips -- No --> R2_AllIn[Designate ALL IN & remove from betting]
+    R2_AllIn --> R2_CheckEnd
 
-        CallChips2{"ENOUGH<br/>CHIPS?"}
-        AllIn2["DESIGNATE ALL IN<br/>AND REMOVE FROM BETTING"]
-        AllFoldCall2{"HAS EVERY PLAYER<br/>FOLDED OR CALLED?"}
+    R2_Act -- Bet --> R2_BetPot{Has pot increased?}
+    R2_BetPot -- Yes --> R2_Act
+    R2_BetPot -- No --> R2_InputBet[/Player input bet/]
 
-        InputBet2[/"PLAYER INPUT BET"/]
-        RaiseChips2{"ENOUGH<br/>CHIPS?"}
-        IncPot2["INCREASE POT"]
-        EndBet2["END BET ROUND 2"]
+    R2_Act -- Raise --> R2_InputBet
+    R2_InputBet --> R2_RaiseChips{Enough chips?}
+    R2_RaiseChips -- No --> R2_Next
+    R2_RaiseChips -- Yes --> R2_IncPot[Increase pot]
+    R2_IncPot --> R2_CheckEnd
 
-        NextP2 --> InputAct2
+    R2_Act -- Check --> R2_CheckPot{Has pot increased?}
+    R2_CheckPot -- Yes --> R2_Act
+    R2_CheckPot -- No --> R2_CheckEnd
 
-        InputAct2 -- CHECK --> CheckPot2
-        CheckPot2 -- No --> AllFoldCall2
-        CheckPot2 -- Yes --> NextP2
+    R2_CheckEnd -- No --> R2_Next
+    R2_CheckEnd -- Yes --> EndR2[End bet round 2]
 
-        InputAct2 -- BET --> BetPot2
-        BetPot2 -- No --> InputBet2
-        BetPot2 -- Yes --> NextP2
-
-        InputAct2 -- FOLD --> RemoveP2
-        RemoveP2 --> AllFoldCall2
-
-        InputAct2 -- CALL --> CallChips2
-        CallChips2 -- Yes --> AllFoldCall2
-        CallChips2 -- No --> AllIn2
-        AllIn2 --> AllFoldCall2
-
-        AllFoldCall2 -- NO --> NextP2
-        AllFoldCall2 -- YES --> EndBet2
-
-        InputAct2 -- RAISE --> InputBet2
-        InputBet2 --> RaiseChips2
-        RaiseChips2 -- No --> NextP2
-        RaiseChips2 -- Yes --> IncPot2
-        IncPot2 --> NextP2
-    end
-
-    EndBet2 --> EvalHands
-
-    %% Showdown & Resolution
-    subgraph SHOWDOWN ["Showdown & Pot Resolution"]
-        EvalHands["EVALUATE PLAYERS HANDS<br/>(handRank)"]
-        DetermineWinner["DETERMINE PLAYER WITH<br/>HIGHEST RANK HAND"]
-        IsAllIn{"IS WINNING PLAYER<br/>ALL IN?"}
-        AwardFull["AWARD FULL POT"]
-        AwardPartial["WINNER AWARDED FROM EACH<br/>PLAYERS BET UP TO THEIR LAST BET"]
-
-        EvalHands --> DetermineWinner
-        DetermineWinner --> IsAllIn
-        IsAllIn -- NO --> AwardFull
-        IsAllIn -- YES --> AwardPartial
-    end
+    %% Showdown & Payout
+    EndR2 --> Eval[Evaluate players hands: handRank]
+    Eval --> BestHand[Determine player with highest rank hand]
+    BestHand --> IsAllIn{Is winning player ALL IN?}
+    IsAllIn -- No --> FullPot[Award full pot]
+    IsAllIn -- Yes --> SidePot[Winner awarded from each player's bet up to their last bet]
 ```
 ---
 
