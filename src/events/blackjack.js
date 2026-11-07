@@ -74,10 +74,15 @@ export default {
 
         if (initialScore === 21) {
             const botScore = calculateScore(botHand);
+            const isPush = botScore === 21;
             const embed = new EmbedBuilder()
-                .setTitle('♠️♥️ Blackjack ♣️♦️')
-                .setColor('Green')
-                .setDescription('♠️♥️ **BLACKJACK!** You hit 21 immediately! You win! 🎉')
+                .setTitle(isPush ? '♠️♥️ Push! ♣️♦️' : '♠️♥️ BLACKJACK! ♣️♦️')
+                .setColor(isPush ? 'Yellow' : 'Green')
+                .setDescription(
+                    isPush
+                        ? "🤝 **Push!** Both you and the bot hit 21! It's a tie."
+                        : '♠️♥️ **BLACKJACK!** You hit 21 immediately! You win! 🎉'
+                )
                 .addFields(
                     { name: `Your Hand (Score: 21)`, value: formatHand(hands[0]), inline: true },
                     { name: `Bot's Hand (Score: ${botScore})`, value: formatHand(botHand), inline: true }
@@ -136,8 +141,13 @@ export default {
                     resultText = '💥 **BUST!** You went over 21. The bot wins.';
                     color = 'Red';
                 } else if (playerScore === 21) {
-                    resultText = '🎉 **You Win!** You hit exactly 21!';
-                    color = 'Green';
+                    if (botScore === 21) {
+                        resultText = "🤝 **Push!** Both you and the bot have 21. It's a tie.";
+                        color = 'Yellow';
+                    } else {
+                        resultText = '🎉 **You Win!** You hit exactly 21!';
+                        color = 'Green';
+                    }
                 } else if (botScore > 21) {
                     resultText = '🎉 **BOT BUSTED!** You win!';
                     color = 'Green';
@@ -170,8 +180,13 @@ export default {
                     if (hScore > 21) {
                         res = '💥 **BUST!** (Lost)';
                     } else if (hScore === 21) {
-                        res = '🎉 **Win!** (Hit 21!)';
-                        anyWin = true;
+                        if (botScore === 21) {
+                            res = '🤝 **Push** (Both have 21)';
+                            anyPush = true;
+                        } else {
+                            res = '🎉 **Win!** (Hit 21!)';
+                            anyWin = true;
+                        }
                     } else if (botScore > 21) {
                         res = '🎉 **Win!** (Bot Busted)';
                         anyWin = true;
