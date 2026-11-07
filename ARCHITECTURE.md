@@ -250,6 +250,7 @@ flowchart TD
         IsAllIn -- NO --> AwardFull
         IsAllIn -- YES --> AwardPartial
     end
+```
 ---
 
 ## Shiv - Diagram title
