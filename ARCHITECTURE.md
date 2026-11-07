@@ -7,7 +7,7 @@ This document describes the main components of the Gracious Badger bot applicati
 - [Kevin - Slash Commands and Badger Den](#kevin--slash-commands-and-badger-den)
 - [Harrison - Card and Deck](#harrison--card-and-deck)
 - [Juan - Poker Game Logic](#juan--diagram-title)
-- [Shiv - Diagram title](#shiv--diagram-title)
+- [Shiv - Database Diagram](#shiv--databasediagram)
 
 ---
 
@@ -187,14 +187,122 @@ flowchart TD
 ```
 ---
 
-## Shiv - Diagram title
+## Shiv - Database Diagram
 
-### Description
+```text
+1. What's in the database
+dataBase.json
+├── users: [                      one entry per person
+│     {
+│       user_id:      "1324..."   Discord ID
+│       dailyCheckin: true/false  has this person checked in for the current day?
+│       coins:        0           total earned
+│     }
+│   ]
+├── last_online: <UTC time>       messages are scanned up to this point
+└── last_reset:  <UTC time>       the last midnight that was processed
+2. What changes the database
 
-*Briefly describe the component(s)*
+ TRIGGER                     FUNCTION              WHAT IT CHANGES
+ ─────────────────────────   ───────────────────   ──────────────────────────
+ User joins / !testwelcome → addUserToDataBase  →  adds user (false, 0 coins)
 
-### Diagram
+ Bot starts / midnight     → processCheckIns    →  dailyCheckin = true
+                                                   adds unknown posters
+                                                   last_online = end of scan
 
-*Insert diagram here.*
+ A midnight has passed     → payAndReset        →  coins + 10 if flag is true
+                                                   everyone's flag = false
+                                                   last_reset = that midnight
 
+ Very first start          → runDueResets       →  last_reset = now
+
+ !checkusers               → loadDB             →  nothing (read only)
+3. When the bot starts
+
+                 npm start
+                     │
+                     ▼
+        ┌──────────────────────────┐
+        │ Is there a last_reset?   │── no ──► save last_reset = now ──┐
+        └────────────┬─────────────┘                                  │
+                     │ yes                                            │
+                     ▼                                                │
+        ┌──────────────────────────┐                                  │
+   ┌───►│ Has the next midnight    │── no ────────────────────────────┤
+   │    │ after last_reset passed? │                                  │
+   │    └────────────┬─────────────┘                                  │
+   │                 │ yes                                            │
+   │                 ▼                                                │
+   │          scan up to it,                                          │
+   │          pay, and reset                                          │
+   └─────────────────┘                                                │
+                                                                      ▼
+                              scan from last_online up to now (set flags)
+                                                                      │
+                                                                      ▼
+                                              set a timer for next midnight
+4. Every day at 12:00 AM
+
+       timer fires
+            │
+            ▼
+  1. SCAN   read messages from last_online up to midnight
+            │
+            ▼
+  2. PAY    flag is true  ──► coins + 10
+            │
+            ▼
+  3. RESET  everyone's flag = false
+            │
+            ▼
+  4. SAVE   last_reset = this midnight
+            │
+            ▼
+  5. REPEAT set a timer for the next midnight
+5. Does a message count as a check-in?
+
+   message in the window
+            │
+   Sent in CHANNEL_NAME? ── no ──► ignored
+            │ yes
+   Sent by a bot? ───────── yes ─► ignored
+            │ no
+   Sent during 11:59 PM? ── yes ─► ignored
+            │ no
+            ▼
+   Author in database? ──── no ──► add them
+            │ yes                     │
+            ▼                         ▼
+       dailyCheckin = true  ◄─────────┘
+6. One user over two days
+
+ Bot stays online the whole time
+
+ TIME          EVENT                     dailyCheckin    coins
+ ───────────   ───────────────────────   ────────────    ─────
+ Mon 9:00 AM   posts in the channel      false *           0
+ Tue 12:00 AM  scan                      true              0
+ Tue 12:00 AM  pay and reset             false            10
+ Tue           doesn't post              false            10
+ Wed 12:00 AM  scan, pay, and reset      false            10   (no pay)
+* The flag doesn't change when the person posts. It stays false until the next scan, so !checkusers can look behind during the day.
+
+7. If the bot is offline
+
+ Bot goes offline Mon 5 PM, restarts Wed 3 PM
+
+ Mon ──────┬──────── Tue ───────────── Wed ──────┬─────►
+       went offline                          restarted
+           │                                     │
+           ├─ Scan 1: up to Tue 12 AM ─ pay      │
+           │                                     │
+           ├─ Scan 2: up to Wed 12 AM ─ pay      │
+           │                                     │
+           └─ Scan 3: Wed 12 AM to 3 PM ─ flags only,
+                                          paid tonight
+Each missed day pays out separately, so nobody loses a day's coins, and no day gets paid twice.
+
+Times are saved in UTC, but midnight and the 11:59 PM rule use the local time of the machine running the bot.
+```
 ---
