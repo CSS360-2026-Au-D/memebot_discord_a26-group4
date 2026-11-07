@@ -84,11 +84,18 @@ classDiagram
 
 ---
 
-## Juan - Diagram title
+## Juan - Poker Game Logic
 
 ### Description
 
-*Briefly describe the component(s)*
+There are five main phases to the upcoming poker game:
+- Setup where players place initial bets and get their cards
+- First betting round where players bet until everyone has folded or called
+- Draw round where players change their cards
+- Second betting round where players bet until everyone has folded or called
+- Showdown where the winner is decided and awarded
+
+Here is a link to the Miro board that clearly shows the steps - https://miro.com/app/board/uXjVEQs_BGQ=/?share_link_id=526915208911
 
 ### Diagram
 
