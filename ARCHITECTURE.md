@@ -4,15 +4,12 @@ This document describes the main components of the Gracious Badger bot applicati
 
 ## Contents
 
+- [Kevin - Slash Commands and Badger Den](#kevin--slash-commands-and-badger-den)
 - [Harrison - Card and Deck](#harrison--card-and-deck)
 - [Juan - Diagram title](#juan--diagram-title)
 - [Shiv - Diagram title](#shiv--diagram-title)
-- [Kevin - Diagram title](#kevin--diagram-title)
 
 ---
-
-
-========== Kevin - Slash commands and lobby (control-flow graph) ==========
 
 ## Interface Layer: Slash Commands and Badger Den
 
