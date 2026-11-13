@@ -77,7 +77,7 @@ Add in final structure.
 | Name | GitHub | Role / Responsibilities |
 |---|---|---|
 | Harrison | [@Suspicious-Wizard](https://github.com/Suspicious-Wizard/discord_bot-gracious_badgers) | Game designer |
-| Juan | [@username](https://github.com/username) | Game designer |
+| Juan | [@corralesj19-oss](https://github.com/corralesj19-oss) | Game designer |
 | Shiv | [@username](https://github.com/username) | Database management |
 | Kevin | [@username](https://github.com/username) | Slash commands and interface |
 
