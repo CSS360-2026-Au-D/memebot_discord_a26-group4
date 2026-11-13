@@ -117,3 +117,9 @@ The `test` script expects `./tests/*.spec.js`, but the repo has no `tests/` fold
 4. Create `tests/` and add `*.spec.js` tests, starting with Deck, hand ranking, and blackjack scoring.
 5. Upgrade `nodemon` to v3 and `discord.js` to the latest 14.x.
 6. Consider adding `"lint": "eslint ."` to the `package.json` scripts and running it in CI (`.github/`).
+
+# Testing Report — Harrison
+
+# Testing Report — Kevin
+
+# Testing Report — Juan
