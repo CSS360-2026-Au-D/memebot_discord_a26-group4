@@ -55,6 +55,28 @@ function canSplitPair(hand) {
     return tens.includes(v1) && tens.includes(v2);
 }
 
+function determineOutcome(playerHand, botHand) {
+    const playerScore = calculateScore(playerHand);
+    const botScore = calculateScore(botHand);
+
+    if (playerScore > 21) {
+        return { outcome: 'bust', color: 'Red' };
+    } else if (playerScore === 21) {
+        return {
+            outcome: botScore === 21 ? 'push' : 'win',
+            color: botScore === 21 ? 'Yellow' : 'Green'
+        };
+    } else if (botScore > 21) {
+        return { outcome: 'win', color: 'Green' };
+    } else if (botScore > playerScore) {
+        return { outcome: 'loss', color: 'Red' };
+    } else if (botScore < playerScore) {
+        return { outcome: 'win', color: 'Green' };
+    } else {
+        return { outcome: 'push', color: 'Yellow' };
+    }
+}
+
 export default {
     name: 'messageCreate',
     async execute(message) {
@@ -367,3 +389,5 @@ export default {
         });
     },
 };
+
+export { createDeck, calculateScore, formatHand, canSplitPair, determineOutcome };
