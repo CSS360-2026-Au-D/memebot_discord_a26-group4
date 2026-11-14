@@ -123,3 +123,40 @@ The `test` script expects `./tests/*.spec.js`, but the repo has no `tests/` fold
 # Testing Report — Kevin
 
 # Testing Report — Juan
+
+## Unit Tests
+
+### Time required
+* This took a couple hours.
+* Involved creating a file named `*.spec.js` (`blackjack.spec.js`) in a new `tests` folder in order to run unit tests using Mocha with the `npm test` command.
+* The test file includes unit tests for the following functions (using `expect` from Chai):
+  * `calculateScore()`
+  * `canSplitPair()`
+  * `determineOutcome()`
+* From writing the unit tests, I found that it would be useful to write additional tests for each method in `blackjack.js`.
+* I also thought it would be useful to write unit tests for the calls to games from slash commands since they are at the intersection of mine and Kevin's work and we have had what we believed to be compatibility issues with the slash commands and games in the past.
+
+### Screenshot
+<img width="540" height="374" alt="Screenshot 2026-11-13 213409" src="https://github.com/user-attachments/assets/e558ec9b-68ef-490d-b260-98f9af6bf1e1" />
+
+
+### User story
+* https://github.com/CSS360-2026-Au-D/memebot_discord_a26-group4/issues/45
+
+---
+
+## Continuous Integration
+
+### Time required
+* This took about an hour.
+* I was able to use my work from the previous task by including `npm test` in the script for CI.
+* This involved creating a script to create a VM that tests the build and functions specifically when there are pull requests and merges.
+* After creating the script and looking at Shiv's test report, I thought that it would be useful to add ESLint to the script.
+
+### Screenshot
+<img width="960" height="564" alt="Screenshot 2026-11-13 212936" src="https://github.com/user-attachments/assets/70524c76-3818-4503-87c8-2553ca83e3b2" />
+
+
+### User story
+* https://github.com/CSS360-2026-Au-D/memebot_discord_a26-group4/issues/44
+
