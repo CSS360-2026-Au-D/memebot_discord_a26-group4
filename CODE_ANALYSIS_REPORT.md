@@ -118,7 +118,53 @@ The `test` script expects `./tests/*.spec.js`, but the repo has no `tests/` fold
 5. Upgrade `nodemon` to v3 and `discord.js` to the latest 14.x.
 6. Consider adding `"lint": "eslint ."` to the `package.json` scripts and running it in CI (`.github/`).
 
-# Testing Report — Harrison
+# Harrison Butler - Code Smell Report: Discord Bot (poker\_logic branch)
+
+Nov 13, 2026
+
+## Summary
+
+On the poker\_logic branch (commit 137f335), cyclomatic complexity is low overall but concentrated in two files. Across 134 functions (about 1,390 lines in src/), the total is 391, the mean is 2.9 and the median is 1. Eight functions score above 10.
+
+blackjack.js (82 points) and the new poker.js (112 points) hold half the total, but they differ in kind. blackjack.js is one 266-line function. poker.js is split into 13 small functions whose scores come from flat input checks, such as validate (14) and normalize (15). Both smells below are in blackjack.js.
+
+Measured with ESLint's complexity rule, which adds 1 for each if, loop, case, catch, ?: and each &&, || or ??. The lint run found no undefined names, and blackjack.js caused 5 of the 6 size-limit warnings.
+
+## Smell 1: God function in blackjack.js
+
+execute in blackjack.js is a 266-line function that owns the whole game: dealing, the natural-21 check, the embed UI, input handling and the payout. Inside it are two closures that score highest in the codebase.
+
+| Function | Complexity | Lines | Statements |
+| --- | --- | --- | --- |
+| resolveGame | 21 | 106 | 62 |
+| collect handler | 16 | 74 | 50 |
+| execute (own body) | 8 | 266 | — |
+
+ESLint's limits are 60 lines and 25 statements per function. The closures share four mutable variables (hands, currentHandIdx, hasSplit, canSplit), so no piece can be tested or reused on its own.
+
+Most of the complexity is duplication, not blackjack's rules. resolveGame writes the win/lose/push ladder twice: once for a single hand and once for split hands. The collect handler repeats the "advance to the next hand, then resolve or redraw" block three times.
+
+## Smell 2: Two card systems
+
+The repo has two unrelated card models. games/cards defines Card and Deck classes, which the finished poker game in poker.js draws from, while blackjack.js builds its own deck from plain objects.
+
+|  | games/cards (poker) | blackjack.js |
+| --- | --- | --- |
+| Card | Card class: numeric rank 2–14, Suit objects | { suit: '♠', value: 'K' } |
+| Deck | Deck class: shuffle, draw(n), multi-deck and custom decks | createDeck() returns an array of 52 |
+| Shuffle | Fisher–Yates in Deck.shuffle | Fisher–Yates again in createDeck |
+| Rank value | Number, ace = 14 | String, parsed on every score in calculateScore |
+
+Any fix to shuffling, card display or parsing has to be made twice, and the copies will drift apart. Blackjack also re-parses strings (J/Q/K lookups, parseInt) on every score, where a numeric rank would do.
+
+## Recommendation
+
+1. Move blackjack onto games/cards: draw Card objects from a Deck and add a blackjack value helper (ace = 1 or 11, faces = 10). This deletes createDeck and the duplicate shuffle.
+2. Pull the game out of the Discord handler into a BlackjackGame class in games/blackjack, mirroring PokerGame. Game state lives in the object, and execute only renders embeds and routes input.
+3. Treat a normal game as a split with one hand. One settle loop then replaces both result ladders, and one advanceHand() replaces the three copies.
+
+Estimated result: resolveGame drops from 21 to about 8 and the collect handler from 16 to about 6. The game logic also becomes unit-testable without Discord.
+
 
 # Testing Report — Kevin
 
