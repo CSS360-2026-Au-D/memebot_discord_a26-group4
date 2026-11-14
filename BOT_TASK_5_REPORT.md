@@ -121,5 +121,56 @@ The `test` script expects `./tests/*.spec.js`, but the repo has no `tests/` fold
 # Testing Report — Harrison
 
 # Testing Report — Kevin
+Threat model- Kevin 
+This is a model to show potenial threats that could happen with the graph below show how likey and the impact it has.
+![Threat chart: likelihood vs. how bad it is](docs/images/threat-chart.png)
+| Threat | Proposed solution |
+|---|---|
+| Discord token leakage | Use environment variables and exclude `.env` from Git |
+| Database corruption | Implement atomic writes and serialized updates |
+| Blackjack spam | Add command cooldowns |
+| Unauthorized user information | Add administrator permission checks |
+| Multiple Blackjack games | Prevent multiple active sessions per player |
+
+Technical Debt and Code Smells — Kevin
+1. Overview
+I reviewed the Gracious Badger poker bot source code to identify the top three I think are the technical debt and code smells that could affect its reliability, security, and maintainability.
+2. Identified Issues
+Issue 1: Database Reliability
+
+File: src/helpers/manDataBase.js
+
+The bot writes user information directly to a JSON file. If multiple updates happen close together, they could overwrite each other. Write errors are also caught without being passed back to the calling functions.
+
+Suggested improvement: Implement safer database writes and better error handling.
+Issue 2: Unused Code
+
+Files: src/events/guildMemberAdd.js, src/games/cards/Deck.js
+
+Some unused variables and functions were identified, including MEME_URL, getWelcomeMessage(), and #discarded.
+
+Suggested improvement: Remove unnecessary code or finish the functionality if it is still needed.
+
+Issue 3: Command Permissions
+
+File: src/events/messageCreate.js
+
+The !checkusers command displays user IDs and coin balances without checking administrator permissions.
+
+Suggested improvement: Restrict the command to authorized administrators.
+ 3. Summary
+
+| Issue | Improvement |
+|---|---|
+| Database reliability | Safer database writes and error handling |
+| Unused code | Remove unnecessary code |
+| Command permissions | Add administrator checks |
+4. Conclusion
+
+The analysis I made identified problems involving database reliability, unused code, error handling, and command permissions. Fixing these issues would make the Gracious Bagers poker bot to be more secure, reliable, and easier to maintain.
+5. Time/Reflection
+I spent about 2hour and 30mins think of possable threats to are poker bot and then spent another 2-3 hour reviewing the soure code and creating a report for technical debt and code smells. During this process, I identified potential security risks, database reliability issues, unused code, and missing command permissions. This helped me better understand the weaknesses in the Gracious Badger poker bot and identify improvements that could make it more secure, reliable, and easier to maintain.
+
+Total time spent: 4-5 hours.
 
 # Testing Report — Juan
