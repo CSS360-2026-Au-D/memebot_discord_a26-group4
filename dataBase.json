@@ -2,7 +2,7 @@
   "users": [
     {
       "user_id": "429692050053660674",
-      "dailyCheckin": false,
+      "dailyCheckin": true,
       "coins": 10
     },
     {
@@ -12,15 +12,15 @@
     },
     {
       "user_id": "1041083326338957343",
-      "dailyCheckin": true,
-      "coins": 0
+      "dailyCheckin": false,
+      "coins": 10
     },
     {
       "user_id": "205888003594256384",
-      "dailyCheckin": true,
-      "coins": 0
+      "dailyCheckin": false,
+      "coins": 10
     }
   ],
-  "last_reset": "2026-11-13T08:00:00.000Z",
-  "last_online": "2026-11-14T06:33:29.355Z"
+  "last_reset": "2026-11-17T08:00:00.000Z",
+  "last_online": "2026-11-18T00:12:34.052Z"
 }
