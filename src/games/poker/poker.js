@@ -188,6 +188,13 @@ async function askDiscards(p, getDiscards) {
 // win the slice of chips up to what they themselves put in. Folded players' chips stay in.
 function awardPots(seats, dealer, announce) {
     const alive = contenders(seats);
+
+    // refund chips nobody still in the hand matched (short all-in blind + fold)
+    const cap = Math.max(...alive.map(p => p.total));
+    for (const p of seats) {
+        if (p.total > cap) { p.chips += p.total - cap; p.total = cap; }
+    }
+
     const ranks = new Map(alive.map(p => [p, new HandRank(p.hand)]));
     if (alive.length > 1) {
         for (const p of alive) announce(`${p.name} shows ${p.hand.join(' ')} (${ranks.get(p).tier.name})`);
