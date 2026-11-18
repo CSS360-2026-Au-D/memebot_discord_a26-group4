@@ -20,7 +20,8 @@ Built for CSS 360 by the Gracious Badgers group.
 | Command | Description | Example |
 |---|---|---|
 | `/command <arg>` | Describe what it does | `/command hello` |
-
+| `/badger-den` | Starts the Badger Den game.  | `/badger-den`  |
+| `/blackjack`  | Starts a game of Blackjack. | `/blackjack`   |
 ## Tech Stack
 
 - **Language:** Javascript
@@ -54,9 +55,11 @@ cp .env.example .env
 ```.env
 DISCORD_TOKEN=your-bot-token-here
 GUILD_ID=your-test-server-id  
+CLIENT_ID=your-application-client-id
 ```
 
 Make sure `.env` is listed in `.gitignore`.
+and to do node src/slashCommands.js in the terminal - to register commands (need to run this whenever any slash command name changes or new ones get added)
 
 ### 4. Run the Bot
 
@@ -79,7 +82,7 @@ Add in final structure.
 | Harrison | [@Suspicious-Wizard](https://github.com/Suspicious-Wizard/discord_bot-gracious_badgers) | Game designer |
 | Juan | [@corralesj19-oss](https://github.com/corralesj19-oss) | Game designer |
 | Shiv | [@username](https://github.com/username) | Database management |
-| Kevin | [@username](https://github.com/username) | Slash commands and interface |
+| Kevin | [@kevindacho08-bit](https://github.com/kevindacho08-bit) | Slash commands and interface |
 
 ## Roadmap
 
