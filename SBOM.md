@@ -1,0 +1,56 @@
+Software Bill of Materials (SBOM)
+
+```text
+NAME                         VERSION                             TYPE           
+@discordjs/builders          1.2.0                               npm            
+@discordjs/collection        1.1.0                               npm            
+@discordjs/rest              1.2.0                               npm            
+@sapphire/async-queue        1.5.0                               npm            
+@sapphire/shapeshift         3.6.0                               npm            
+@sapphire/snowflake          3.2.2                               npm               
+@tokenizer/token             0.3.0                               npm            
+@types/node                  18.7.23                             npm            
+@types/ws                    8.5.3                               npm            
+actions/checkout             v1                                  github-action  
+actions/checkout             v2                                  github-action  
+actions/checkout             v4                                  github-action  
+actions/setup-node           v1                                  github-action  
+actions/setup-node           v4                                  github-action  
+ascii-table                  0.0.9                               npm            
+asynckit                     0.4.0                               npm            
+axios                        0.27.2                              npm            
+combined-stream              1.0.8                               npm            
+delayed-stream               1.0.0                               npm            
+discord-api-types            0.37.11                             npm            
+discord.js                   14.5.0                              npm            
+docker/build-push-action     v2                                  github-action  
+docker/login-action          v1                                  github-action  
+docker/setup-buildx-action   v1                                  github-action  
+esbuild                      UNKNOWN                             binary         
+fast-deep-equal              3.1.3                               npm            
+file-type                    18.0.0                              npm            
+follow-redirects             1.15.2                              npm            
+form-data                    4.0.0                               npm            
+github.com/evanw/esbuild     v0.0.0-20220922194556-085265a2660f  go-module      
+ieee754                      1.2.1                               npm            
+inherits                     2.0.4                               npm            
+lodash.snakecase             4.1.1                               npm            
+lodash.uniqwith              4.5.0                               npm            
+memebot_discord              1.0.0                               npm            
+mime-db                      1.52.0                              npm            
+mime-types                   2.1.35                              npm            
+peek-readable                5.0.0                               npm            
+readable-stream              3.6.0                               npm            
+readable-web-to-node-stream  3.0.2                               npm            
+safe-buffer                  5.2.1                               npm            
+stdlib                       go1.19.1                            go-module      
+string_decoder               1.3.0                               npm            
+strtok3                      7.0.0                               npm            
+token-types                  5.0.1                               npm            
+ts-mixer                     6.0.1                               npm            
+tslib                        2.4.0                               npm            
+undici                       5.10.0                              npm            
+util-deprecate               1.0.2                               npm            
+windows-kill                 UNKNOWN                             binary         
+ws                           8.9.0                               npm
+```
