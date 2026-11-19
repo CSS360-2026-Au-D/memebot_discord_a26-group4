@@ -1,0 +1,1237 @@
+SPDXVersion: SPDX-2.3
+DataLicense: CC0-1.0
+SPDXID: SPDXRef-DOCUMENT
+DocumentName: .
+DocumentNamespace: https://anchore.com/syft/dir/59895c0d-41a2-4ce2-af7f-d5fed53f3d17
+LicenseListVersion: 3.29
+Creator: Organization: Anchore, Inc
+Creator: Tool: syft-1.57.2
+Created: 2026-11-18T03:08:03Z
+
+##### Unpackaged files
+
+FileName: node_modules/undefsafe/.github/workflows/release.yml
+SPDXID: SPDXRef-File-....github-workflows-release.yml-d135e7a28a13f952
+FileType: TEXT
+FileChecksum: SHA1: 03785e1429a19bfa16428d53d3afa969c865c344
+FileChecksum: SHA256: d3327cdeed12a31b0ab7861f7febcf1f031b2a48db85e6208aa20b1e0dc1bc77
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: node_modules/esbuild-darwin-64/bin/esbuild
+SPDXID: SPDXRef-File-...esbuild-darwin-64-bin-esbuild-3a2d8574043b0017
+FileType: APPLICATION
+FileType: BINARY
+FileChecksum: SHA1: b7a31cac16b30a552e44317bb0608bbc3634131f
+FileChecksum: SHA256: a26436544c24b2ec057833835a3678e56d4b9b53cc97178522d1a5d90692b915
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: node_modules/nodemon/bin/windows-kill.exe
+SPDXID: SPDXRef-File-...nodemon-bin-windows-kill.exe-77e0d64a9d2557d1
+FileType: APPLICATION
+FileType: BINARY
+FileChecksum: SHA1: cf89d1cbd52f3183590b33bd6be591f95a6f5291
+FileChecksum: SHA256: d35c0d3af8f66984b1ead5cb56744049c1d71ef0791383250ad1086c0e21f865
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: .github/workflows/build-and-deploy.yml
+SPDXID: SPDXRef-File-.github-workflows-build-and-deploy.yml-8655c0f19474fdc2
+FileType: TEXT
+FileChecksum: SHA1: e769a1e1bb1e5d9cd9905a1fd74b3e714848f5cc
+FileChecksum: SHA256: ce0c6170fadd9ebbb4f50eb6511e1d0fb7e6bc23a2c1f03fb8b55c38240e8193
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: node_modules/esbuild/bin/esbuild
+SPDXID: SPDXRef-File-node-modules-esbuild-bin-esbuild-06f084fd7c9154ab
+FileType: APPLICATION
+FileType: BINARY
+FileChecksum: SHA1: b7a31cac16b30a552e44317bb0608bbc3634131f
+FileChecksum: SHA256: a26436544c24b2ec057833835a3678e56d4b9b53cc97178522d1a5d90692b915
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: node_modules/fsevents/fsevents.node
+SPDXID: SPDXRef-File-node-modules-fsevents-fsevents.node-caf8d43bd5fa2c58
+FileChecksum: SHA1: 0000000000000000000000000000000000000000
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+FileName: package-lock.json
+SPDXID: SPDXRef-File-package-lock.json-fd71c2238fc07657
+FileType: APPLICATION
+FileChecksum: SHA1: 82cc18dd08db878ee8c1849ed21f45e55d2565b7
+FileChecksum: SHA256: 5a9908eb386d0048e0aa3551aa0c3e27348adaa6cba82e9d695efcd6faae7435
+LicenseConcluded: NOASSERTION
+LicenseInfoInFile: NOASSERTION
+FileCopyrightText: NOASSERTION
+
+##### Package: .
+
+PackageName: .
+SPDXID: SPDXRef-DocumentRoot-Directory-.
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: NOASSERTION
+PrimaryPackagePurpose: FILE
+PackageVerificationCode: 9ccbf8b67577161407f3212d6e82b0ab2cae0a2e
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+
+##### Package: windows-kill
+
+PackageName: windows-kill
+SPDXID: SPDXRef-Package-binary-windows-kill-8dd17963ecd272f4
+PackageVersion: UNKNOWN
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from the following paths: /node_modules/nodemon/bin/windows-kill.exe
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:windows-kill:windows-kill:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:windows-kill:windows_kill:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:windows_kill:windows-kill:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:windows_kill:windows_kill:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:windows:windows-kill:*:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:windows:windows_kill:*:*:*:*:*:*:*:*
+
+##### Package: actions/checkout
+
+PackageName: actions/checkout
+SPDXID: SPDXRef-Package-github-action-actions-checkout-6c6b4648c07f7f27
+PackageVersion: v2
+PackageSupplier: Organization: GitHub
+PackageOriginator: Organization: GitHub
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/build-and-deploy.yml
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:actions\/checkout:actions\/checkout:v2:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:github/actions/checkout@v2
+
+##### Package: actions/checkout
+
+PackageName: actions/checkout
+SPDXID: SPDXRef-Package-github-action-actions-checkout-d6b6be5881828f41
+PackageVersion: v1
+PackageSupplier: Organization: GitHub
+PackageOriginator: Organization: GitHub
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from GitHub Actions workflow file or composite action file: /node_modules/undefsafe/.github/workflows/release.yml
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:actions\/checkout:actions\/checkout:v1:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:github/actions/checkout@v1
+
+##### Package: actions/setup-node
+
+PackageName: actions/setup-node
+SPDXID: SPDXRef-Package-github-action-actions-setup-node-fbf56f2363c217f4
+PackageVersion: v1
+PackageSupplier: Organization: GitHub
+PackageOriginator: Organization: GitHub
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from GitHub Actions workflow file or composite action file: /node_modules/undefsafe/.github/workflows/release.yml
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:actions\/setup-node:actions\/setup-node:v1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:actions\/setup-node:actions\/setup_node:v1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:actions\/setup_node:actions\/setup-node:v1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:actions\/setup_node:actions\/setup_node:v1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:actions\/setup:actions\/setup-node:v1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:actions\/setup:actions\/setup_node:v1:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:github/actions/setup-node@v1
+
+##### Package: docker/build-push-action
+
+PackageName: docker/build-push-action
+SPDXID: SPDXRef-Package-github-action-docker-build-push-action-e52fdfd5bbbba453
+PackageVersion: v2
+PackageSupplier: Organization: docker
+PackageOriginator: Organization: docker
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/build-and-deploy.yml
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/build-push-action:docker\/build-push-action:v2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/build-push-action:docker\/build_push_action:v2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/build_push_action:docker\/build-push-action:v2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/build_push_action:docker\/build_push_action:v2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/build-push:docker\/build-push-action:v2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/build-push:docker\/build_push_action:v2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/build_push:docker\/build-push-action:v2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/build_push:docker\/build_push_action:v2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/build:docker\/build-push-action:v2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/build:docker\/build_push_action:v2:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:github/docker/build-push-action@v2
+
+##### Package: docker/login-action
+
+PackageName: docker/login-action
+SPDXID: SPDXRef-Package-github-action-docker-login-action-d70a6af7ffbe2f77
+PackageVersion: v1
+PackageSupplier: Organization: docker
+PackageOriginator: Organization: docker
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/build-and-deploy.yml
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/login-action:docker\/login-action:v1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/login-action:docker\/login_action:v1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/login_action:docker\/login-action:v1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/login_action:docker\/login_action:v1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/login:docker\/login-action:v1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/login:docker\/login_action:v1:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:github/docker/login-action@v1
+
+##### Package: docker/setup-buildx-action
+
+PackageName: docker/setup-buildx-action
+SPDXID: SPDXRef-Package-github-action-docker-setup-buildx-action-ee21302d2ce44afc
+PackageVersion: v1
+PackageSupplier: Organization: docker
+PackageOriginator: Organization: docker
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from GitHub Actions workflow file or composite action file: /.github/workflows/build-and-deploy.yml
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/setup-buildx-action:docker\/setup-buildx-action:v1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/setup-buildx-action:docker\/setup_buildx_action:v1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/setup_buildx_action:docker\/setup-buildx-action:v1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/setup_buildx_action:docker\/setup_buildx_action:v1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/setup-buildx:docker\/setup-buildx-action:v1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/setup-buildx:docker\/setup_buildx_action:v1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/setup_buildx:docker\/setup-buildx-action:v1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/setup_buildx:docker\/setup_buildx_action:v1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/setup:docker\/setup-buildx-action:v1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:docker\/setup:docker\/setup_buildx_action:v1:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:github/docker/setup-buildx-action@v1
+
+##### Package: github.com/evanw/esbuild
+
+PackageName: github.com/evanw/esbuild
+SPDXID: SPDXRef-Package-go-module-github.com-evanw-esbuild-1b18f173f55c2a77
+PackageVersion: v0.0.0-20220922194556-085265a2660f
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from go module information: /node_modules/esbuild-darwin-64/bin/esbuild
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:evanw:esbuild:v0.0.0-20220922194556-085265a2660f:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:golang/github.com/evanw/esbuild@v0.0.0-20220922194556-085265a2660f
+
+##### Package: github.com/evanw/esbuild
+
+PackageName: github.com/evanw/esbuild
+SPDXID: SPDXRef-Package-go-module-github.com-evanw-esbuild-60f95815a25dfd60
+PackageVersion: v0.0.0-20220922194556-085265a2660f
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from go module information: /node_modules/esbuild/bin/esbuild
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:evanw:esbuild:v0.0.0-20220922194556-085265a2660f:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:golang/github.com/evanw/esbuild@v0.0.0-20220922194556-085265a2660f
+
+##### Package: golang.org/x/sys
+
+PackageName: golang.org/x/sys
+SPDXID: SPDXRef-Package-go-module-golang.org-x-sys-240c933d839c1d88
+PackageVersion: v0.0.0-20220715151400-c0bba94af5f8
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageChecksum: SHA256: d00f8ce94aa7f848dee241cc2bcd1db45dc90970b8ca4060406e057b4e904614
+PackageSourceInfo: acquired package info from go module information: /node_modules/esbuild-darwin-64/bin/esbuild
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:golang:x\/sys:v0.0.0-20220715151400-c0bba94af5f8:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:golang/golang.org/x/sys@v0.0.0-20220715151400-c0bba94af5f8
+
+##### Package: golang.org/x/sys
+
+PackageName: golang.org/x/sys
+SPDXID: SPDXRef-Package-go-module-golang.org-x-sys-f3a0bd825672e60a
+PackageVersion: v0.0.0-20220715151400-c0bba94af5f8
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageChecksum: SHA256: d00f8ce94aa7f848dee241cc2bcd1db45dc90970b8ca4060406e057b4e904614
+PackageSourceInfo: acquired package info from go module information: /node_modules/esbuild/bin/esbuild
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: NOASSERTION
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:golang:x\/sys:v0.0.0-20220715151400-c0bba94af5f8:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:golang/golang.org/x/sys@v0.0.0-20220715151400-c0bba94af5f8
+
+##### Package: stdlib
+
+PackageName: stdlib
+SPDXID: SPDXRef-Package-go-module-stdlib-1de37f82c029486a
+PackageVersion: go1.19.1
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from go module information: /node_modules/esbuild-darwin-64/bin/esbuild
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:golang:go:1.19.1:-:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:golang/stdlib@1.19.1
+
+##### Package: stdlib
+
+PackageName: stdlib
+SPDXID: SPDXRef-Package-go-module-stdlib-209462322553e0bd
+PackageVersion: go1.19.1
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from go module information: /node_modules/esbuild/bin/esbuild
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:golang:go:1.19.1:-:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:golang/stdlib@1.19.1
+
+##### Package: @discordjs/builders
+
+PackageName: @discordjs/builders
+SPDXID: SPDXRef-Package-npm--discordjs-builders-b3069e24f8ea7bf9
+PackageVersion: 1.2.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/@discordjs/builders/-/builders-1.2.0.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: Apache-2.0
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\@discordjs\/builders:\@discordjs\/builders:1.2.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/%40discordjs/builders@1.2.0
+
+##### Package: @discordjs/collection
+
+PackageName: @discordjs/collection
+SPDXID: SPDXRef-Package-npm--discordjs-collection-76dc68569a0f55f4
+PackageVersion: 1.1.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/@discordjs/collection/-/collection-1.1.0.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: Apache-2.0
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\@discordjs\/collection:\@discordjs\/collection:1.1.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/%40discordjs/collection@1.1.0
+
+##### Package: @discordjs/rest
+
+PackageName: @discordjs/rest
+SPDXID: SPDXRef-Package-npm--discordjs-rest-818b2d93f0ccfa9c
+PackageVersion: 1.2.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/@discordjs/rest/-/rest-1.2.0.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: Apache-2.0
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\@discordjs\/rest:\@discordjs\/rest:1.2.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/%40discordjs/rest@1.2.0
+
+##### Package: @sapphire/async-queue
+
+PackageName: @sapphire/async-queue
+SPDXID: SPDXRef-Package-npm--sapphire-async-queue-8b2bf1da87955c81
+PackageVersion: 1.5.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/@sapphire/async-queue/-/async-queue-1.5.0.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\@sapphire\/async-queue:\@sapphire\/async-queue:1.5.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\@sapphire\/async-queue:\@sapphire\/async_queue:1.5.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\@sapphire\/async_queue:\@sapphire\/async-queue:1.5.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\@sapphire\/async_queue:\@sapphire\/async_queue:1.5.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\@sapphire\/async:\@sapphire\/async-queue:1.5.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\@sapphire\/async:\@sapphire\/async_queue:1.5.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/%40sapphire/async-queue@1.5.0
+
+##### Package: @sapphire/shapeshift
+
+PackageName: @sapphire/shapeshift
+SPDXID: SPDXRef-Package-npm--sapphire-shapeshift-b5bafde65132818a
+PackageVersion: 3.6.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/@sapphire/shapeshift/-/shapeshift-3.6.0.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\@sapphire\/shapeshift:\@sapphire\/shapeshift:3.6.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/%40sapphire/shapeshift@3.6.0
+
+##### Package: @sapphire/snowflake
+
+PackageName: @sapphire/snowflake
+SPDXID: SPDXRef-Package-npm--sapphire-snowflake-b47aabe36999ba73
+PackageVersion: 3.2.2
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/@sapphire/snowflake/-/snowflake-3.2.2.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\@sapphire\/snowflake:\@sapphire\/snowflake:3.2.2:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/%40sapphire/snowflake@3.2.2
+
+##### Package: @tokenizer/token
+
+PackageName: @tokenizer/token
+SPDXID: SPDXRef-Package-npm--tokenizer-token-5e14b0b53d7d206a
+PackageVersion: 0.3.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/@tokenizer/token/-/token-0.3.0.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\@tokenizer\/token:\@tokenizer\/token:0.3.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/%40tokenizer/token@0.3.0
+
+##### Package: @types/node
+
+PackageName: @types/node
+SPDXID: SPDXRef-Package-npm--types-node-580b3e08985a5147
+PackageVersion: 18.7.23
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/@types/node/-/node-18.7.23.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\@types\/node:\@types\/node:18.7.23:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/%40types/node@18.7.23
+
+##### Package: @types/ws
+
+PackageName: @types/ws
+SPDXID: SPDXRef-Package-npm--types-ws-fb3b22561d4b6c8f
+PackageVersion: 8.5.3
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/@types/ws/-/ws-8.5.3.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:\@types\/ws:\@types\/ws:8.5.3:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/%40types/ws@8.5.3
+
+##### Package: ascii-table
+
+PackageName: ascii-table
+SPDXID: SPDXRef-Package-npm-ascii-table-12d7eaaf3a984d05
+PackageVersion: 0.0.9
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/ascii-table/-/ascii-table-0.0.9.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ascii-table:ascii-table:0.0.9:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ascii-table:ascii_table:0.0.9:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ascii_table:ascii-table:0.0.9:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ascii_table:ascii_table:0.0.9:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ascii:ascii-table:0.0.9:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ascii:ascii_table:0.0.9:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/ascii-table@0.0.9
+
+##### Package: asynckit
+
+PackageName: asynckit
+SPDXID: SPDXRef-Package-npm-asynckit-3f371bd1625a90e5
+PackageVersion: 0.4.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/asynckit/-/asynckit-0.4.0.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:asynckit:asynckit:0.4.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/asynckit@0.4.0
+
+##### Package: axios
+
+PackageName: axios
+SPDXID: SPDXRef-Package-npm-axios-cea065e3b54799cc
+PackageVersion: 0.27.2
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/axios/-/axios-0.27.2.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:axios:axios:0.27.2:*:*:*:*:node.js:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/axios@0.27.2
+
+##### Package: combined-stream
+
+PackageName: combined-stream
+SPDXID: SPDXRef-Package-npm-combined-stream-6feb2abce081a13b
+PackageVersion: 1.0.8
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/combined-stream/-/combined-stream-1.0.8.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:combined-stream:combined-stream:1.0.8:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:combined-stream:combined_stream:1.0.8:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:combined_stream:combined-stream:1.0.8:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:combined_stream:combined_stream:1.0.8:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:combined:combined-stream:1.0.8:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:combined:combined_stream:1.0.8:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/combined-stream@1.0.8
+
+##### Package: delayed-stream
+
+PackageName: delayed-stream
+SPDXID: SPDXRef-Package-npm-delayed-stream-c23340a58ec36159
+PackageVersion: 1.0.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:delayed-stream:delayed-stream:1.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:delayed-stream:delayed_stream:1.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:delayed_stream:delayed-stream:1.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:delayed_stream:delayed_stream:1.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:delayed:delayed-stream:1.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:delayed:delayed_stream:1.0.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/delayed-stream@1.0.0
+
+##### Package: discord-api-types
+
+PackageName: discord-api-types
+SPDXID: SPDXRef-Package-npm-discord-api-types-715d151bfb01f3fc
+PackageVersion: 0.37.11
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/discord-api-types/-/discord-api-types-0.37.11.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:discord-api-types:discord-api-types:0.37.11:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:discord-api-types:discord_api_types:0.37.11:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:discord_api_types:discord-api-types:0.37.11:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:discord_api_types:discord_api_types:0.37.11:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:discord-api:discord-api-types:0.37.11:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:discord-api:discord_api_types:0.37.11:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:discord_api:discord-api-types:0.37.11:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:discord_api:discord_api_types:0.37.11:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:discord:discord-api-types:0.37.11:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:discord:discord_api_types:0.37.11:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/discord-api-types@0.37.11
+
+##### Package: discord.js
+
+PackageName: discord.js
+SPDXID: SPDXRef-Package-npm-discord.js-b86859ba413dd364
+PackageVersion: 14.5.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/discord.js/-/discord.js-14.5.0.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: Apache-2.0
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:discord.js:discord.js:14.5.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/discord.js@14.5.0
+
+##### Package: fast-deep-equal
+
+PackageName: fast-deep-equal
+SPDXID: SPDXRef-Package-npm-fast-deep-equal-5dcd27213b9411fd
+PackageVersion: 3.1.3
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:fast-deep-equal:fast-deep-equal:3.1.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:fast-deep-equal:fast_deep_equal:3.1.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:fast_deep_equal:fast-deep-equal:3.1.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:fast_deep_equal:fast_deep_equal:3.1.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:fast-deep:fast-deep-equal:3.1.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:fast-deep:fast_deep_equal:3.1.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:fast_deep:fast-deep-equal:3.1.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:fast_deep:fast_deep_equal:3.1.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:fast:fast-deep-equal:3.1.3:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:fast:fast_deep_equal:3.1.3:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/fast-deep-equal@3.1.3
+
+##### Package: file-type
+
+PackageName: file-type
+SPDXID: SPDXRef-Package-npm-file-type-cd87a8d32027178f
+PackageVersion: 18.0.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/file-type/-/file-type-18.0.0.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:sindresorhus:file-type:18.0.0:*:*:*:*:node.js:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/file-type@18.0.0
+
+##### Package: follow-redirects
+
+PackageName: follow-redirects
+SPDXID: SPDXRef-Package-npm-follow-redirects-8946d0349ba38fe4
+PackageVersion: 1.15.2
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.15.2.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:follow-redirects:follow_redirects:1.15.2:*:*:*:*:node.js:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/follow-redirects@1.15.2
+
+##### Package: form-data
+
+PackageName: form-data
+SPDXID: SPDXRef-Package-npm-form-data-2358d926ecfb481e
+PackageVersion: 4.0.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/form-data/-/form-data-4.0.0.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:form-data:form-data:4.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:form-data:form_data:4.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:form_data:form-data:4.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:form_data:form_data:4.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:form:form-data:4.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:form:form_data:4.0.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/form-data@4.0.0
+
+##### Package: ieee754
+
+PackageName: ieee754
+SPDXID: SPDXRef-Package-npm-ieee754-1dc54701f6827996
+PackageVersion: 1.2.1
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/ieee754/-/ieee754-1.2.1.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: BSD-3-Clause
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ieee754:ieee754:1.2.1:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/ieee754@1.2.1
+
+##### Package: inherits
+
+PackageName: inherits
+SPDXID: SPDXRef-Package-npm-inherits-911374ff7f37ba7f
+PackageVersion: 2.0.4
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/inherits/-/inherits-2.0.4.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: ISC
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:inherits:inherits:2.0.4:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/inherits@2.0.4
+
+##### Package: lodash.snakecase
+
+PackageName: lodash.snakecase
+SPDXID: SPDXRef-Package-npm-lodash.snakecase-4f5acaba51f7e850
+PackageVersion: 4.1.1
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/lodash.snakecase/-/lodash.snakecase-4.1.1.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:lodash.snakecase:lodash.snakecase:4.1.1:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/lodash.snakecase@4.1.1
+
+##### Package: lodash.uniqwith
+
+PackageName: lodash.uniqwith
+SPDXID: SPDXRef-Package-npm-lodash.uniqwith-0b3d68d936f9eea9
+PackageVersion: 4.5.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/lodash.uniqwith/-/lodash.uniqwith-4.5.0.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:lodash.uniqwith:lodash.uniqwith:4.5.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/lodash.uniqwith@4.5.0
+
+##### Package: memebot_discord
+
+PackageName: memebot_discord
+SPDXID: SPDXRef-Package-npm-memebot-discord-9f7475803eb5e81d
+PackageVersion: 1.0.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: NOASSERTION
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:memebot-discord:memebot-discord:1.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:memebot-discord:memebot_discord:1.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:memebot_discord:memebot-discord:1.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:memebot_discord:memebot_discord:1.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:memebot:memebot-discord:1.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:memebot:memebot_discord:1.0.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/memebot_discord@1.0.0
+
+##### Package: mime-db
+
+PackageName: mime-db
+SPDXID: SPDXRef-Package-npm-mime-db-e010d1b3c9ab0c02
+PackageVersion: 1.52.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/mime-db/-/mime-db-1.52.0.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:mime-db:mime-db:1.52.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:mime-db:mime_db:1.52.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:mime_db:mime-db:1.52.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:mime_db:mime_db:1.52.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:mime:mime-db:1.52.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:mime:mime_db:1.52.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/mime-db@1.52.0
+
+##### Package: mime-types
+
+PackageName: mime-types
+SPDXID: SPDXRef-Package-npm-mime-types-d035c2d2cba76761
+PackageVersion: 2.1.35
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/mime-types/-/mime-types-2.1.35.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:mime-types:mime-types:2.1.35:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:mime-types:mime_types:2.1.35:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:mime_types:mime-types:2.1.35:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:mime_types:mime_types:2.1.35:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:mime:mime-types:2.1.35:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:mime:mime_types:2.1.35:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/mime-types@2.1.35
+
+##### Package: peek-readable
+
+PackageName: peek-readable
+SPDXID: SPDXRef-Package-npm-peek-readable-919c1a50f687b4a4
+PackageVersion: 5.0.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/peek-readable/-/peek-readable-5.0.0.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:peek-readable:peek-readable:5.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:peek-readable:peek_readable:5.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:peek_readable:peek-readable:5.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:peek_readable:peek_readable:5.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:peek:peek-readable:5.0.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:peek:peek_readable:5.0.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/peek-readable@5.0.0
+
+##### Package: readable-stream
+
+PackageName: readable-stream
+SPDXID: SPDXRef-Package-npm-readable-stream-bca2bed48e662ddf
+PackageVersion: 3.6.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/readable-stream/-/readable-stream-3.6.0.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable-stream:readable-stream:3.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable-stream:readable_stream:3.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable_stream:readable-stream:3.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable_stream:readable_stream:3.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable:readable-stream:3.6.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable:readable_stream:3.6.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/readable-stream@3.6.0
+
+##### Package: readable-web-to-node-stream
+
+PackageName: readable-web-to-node-stream
+SPDXID: SPDXRef-Package-npm-readable-web-to-node-stream-9e4c1ca313f67ffb
+PackageVersion: 3.0.2
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/readable-web-to-node-stream/-/readable-web-to-node-stream-3.0.2.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable-web-to-node-stream:readable-web-to-node-stream:3.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable-web-to-node-stream:readable_web_to_node_stream:3.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable_web_to_node_stream:readable-web-to-node-stream:3.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable_web_to_node_stream:readable_web_to_node_stream:3.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable-web-to-node:readable-web-to-node-stream:3.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable-web-to-node:readable_web_to_node_stream:3.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable_web_to_node:readable-web-to-node-stream:3.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable_web_to_node:readable_web_to_node_stream:3.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable-web-to:readable-web-to-node-stream:3.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable-web-to:readable_web_to_node_stream:3.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable_web_to:readable-web-to-node-stream:3.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable_web_to:readable_web_to_node_stream:3.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable-web:readable-web-to-node-stream:3.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable-web:readable_web_to_node_stream:3.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable_web:readable-web-to-node-stream:3.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable_web:readable_web_to_node_stream:3.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable:readable-web-to-node-stream:3.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:readable:readable_web_to_node_stream:3.0.2:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/readable-web-to-node-stream@3.0.2
+
+##### Package: safe-buffer
+
+PackageName: safe-buffer
+SPDXID: SPDXRef-Package-npm-safe-buffer-28135efb01cb74b9
+PackageVersion: 5.2.1
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:safe-buffer:safe-buffer:5.2.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:safe-buffer:safe_buffer:5.2.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:safe_buffer:safe-buffer:5.2.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:safe_buffer:safe_buffer:5.2.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:safe:safe-buffer:5.2.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:safe:safe_buffer:5.2.1:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/safe-buffer@5.2.1
+
+##### Package: string_decoder
+
+PackageName: string_decoder
+SPDXID: SPDXRef-Package-npm-string-decoder-31e1990d6adabf2b
+PackageVersion: 1.3.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/string_decoder/-/string_decoder-1.3.0.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:string-decoder:string-decoder:1.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:string-decoder:string_decoder:1.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:string_decoder:string-decoder:1.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:string_decoder:string_decoder:1.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:string:string-decoder:1.3.0:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:string:string_decoder:1.3.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/string_decoder@1.3.0
+
+##### Package: strtok3
+
+PackageName: strtok3
+SPDXID: SPDXRef-Package-npm-strtok3-8571ff3cd514c0de
+PackageVersion: 7.0.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/strtok3/-/strtok3-7.0.0.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:strtok3:strtok3:7.0.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/strtok3@7.0.0
+
+##### Package: token-types
+
+PackageName: token-types
+SPDXID: SPDXRef-Package-npm-token-types-09d2477465a07d5d
+PackageVersion: 5.0.1
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/token-types/-/token-types-5.0.1.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:token-types:token-types:5.0.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:token-types:token_types:5.0.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:token_types:token-types:5.0.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:token_types:token_types:5.0.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:token:token-types:5.0.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:token:token_types:5.0.1:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/token-types@5.0.1
+
+##### Package: ts-mixer
+
+PackageName: ts-mixer
+SPDXID: SPDXRef-Package-npm-ts-mixer-a97abc369701bd1f
+PackageVersion: 6.0.1
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/ts-mixer/-/ts-mixer-6.0.1.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ts-mixer:ts-mixer:6.0.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ts-mixer:ts_mixer:6.0.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ts_mixer:ts-mixer:6.0.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ts_mixer:ts_mixer:6.0.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ts:ts-mixer:6.0.1:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ts:ts_mixer:6.0.1:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/ts-mixer@6.0.1
+
+##### Package: tslib
+
+PackageName: tslib
+SPDXID: SPDXRef-Package-npm-tslib-9a104749435e5508
+PackageVersion: 2.4.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/tslib/-/tslib-2.4.0.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: 0BSD
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:tslib:tslib:2.4.0:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/tslib@2.4.0
+
+##### Package: undici
+
+PackageName: undici
+SPDXID: SPDXRef-Package-npm-undici-4cf9f8e9783c863a
+PackageVersion: 5.10.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/undici/-/undici-5.10.0.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:nodejs:undici:5.10.0:*:*:*:*:node.js:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/undici@5.10.0
+
+##### Package: util-deprecate
+
+PackageName: util-deprecate
+SPDXID: SPDXRef-Package-npm-util-deprecate-aac5900c84ec45ff
+PackageVersion: 1.0.2
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:util-deprecate:util-deprecate:1.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:util-deprecate:util_deprecate:1.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:util_deprecate:util-deprecate:1.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:util_deprecate:util_deprecate:1.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:util:util-deprecate:1.0.2:*:*:*:*:*:*:*
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:util:util_deprecate:1.0.2:*:*:*:*:*:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/util-deprecate@1.0.2
+
+##### Package: ws
+
+PackageName: ws
+SPDXID: SPDXRef-Package-npm-ws-bb62c826f7fedc72
+PackageVersion: 8.9.0
+PackageSupplier: NOASSERTION
+PackageDownloadLocation: https://registry.npmjs.org/ws/-/ws-8.9.0.tgz
+FilesAnalyzed: false
+PackageSourceInfo: acquired package info from installed node module manifest file: /package-lock.json
+PackageLicenseConcluded: NOASSERTION
+PackageLicenseDeclared: MIT
+PackageCopyrightText: NOASSERTION
+ExternalRef: SECURITY cpe23Type cpe:2.3:a:ws_project:ws:8.9.0:*:*:*:*:node.js:*:*
+ExternalRef: PACKAGE-MANAGER purl pkg:npm/ws@8.9.0
+
+##### Relationships
+
+Relationship: SPDXRef-Package-npm-token-types-09d2477465a07d5d DEPENDENCY_OF SPDXRef-Package-npm-file-type-cd87a8d32027178f
+Relationship: SPDXRef-Package-npm-lodash.uniqwith-0b3d68d936f9eea9 DEPENDENCY_OF SPDXRef-Package-npm--sapphire-shapeshift-b5bafde65132818a
+Relationship: SPDXRef-Package-npm-ascii-table-12d7eaaf3a984d05 DEPENDENCY_OF SPDXRef-Package-npm-memebot-discord-9f7475803eb5e81d
+Relationship: SPDXRef-Package-npm-ieee754-1dc54701f6827996 DEPENDENCY_OF SPDXRef-Package-npm-token-types-09d2477465a07d5d
+Relationship: SPDXRef-Package-go-module-stdlib-1de37f82c029486a DEPENDENCY_OF SPDXRef-Package-go-module-github.com-evanw-esbuild-1b18f173f55c2a77
+Relationship: SPDXRef-Package-go-module-stdlib-209462322553e0bd DEPENDENCY_OF SPDXRef-Package-go-module-github.com-evanw-esbuild-60f95815a25dfd60
+Relationship: SPDXRef-Package-npm-form-data-2358d926ecfb481e DEPENDENCY_OF SPDXRef-Package-npm-axios-cea065e3b54799cc
+Relationship: SPDXRef-Package-go-module-golang.org-x-sys-240c933d839c1d88 DEPENDENCY_OF SPDXRef-Package-go-module-github.com-evanw-esbuild-1b18f173f55c2a77
+Relationship: SPDXRef-Package-npm-safe-buffer-28135efb01cb74b9 DEPENDENCY_OF SPDXRef-Package-npm-string-decoder-31e1990d6adabf2b
+Relationship: SPDXRef-Package-npm-string-decoder-31e1990d6adabf2b DEPENDENCY_OF SPDXRef-Package-npm-readable-stream-bca2bed48e662ddf
+Relationship: SPDXRef-Package-npm-asynckit-3f371bd1625a90e5 DEPENDENCY_OF SPDXRef-Package-npm-form-data-2358d926ecfb481e
+Relationship: SPDXRef-Package-npm-undici-4cf9f8e9783c863a DEPENDENCY_OF SPDXRef-Package-npm--discordjs-rest-818b2d93f0ccfa9c
+Relationship: SPDXRef-Package-npm-undici-4cf9f8e9783c863a DEPENDENCY_OF SPDXRef-Package-npm-discord.js-b86859ba413dd364
+Relationship: SPDXRef-Package-npm-lodash.snakecase-4f5acaba51f7e850 DEPENDENCY_OF SPDXRef-Package-npm-discord.js-b86859ba413dd364
+Relationship: SPDXRef-Package-npm--types-node-580b3e08985a5147 DEPENDENCY_OF SPDXRef-Package-npm--types-ws-fb3b22561d4b6c8f
+Relationship: SPDXRef-Package-npm-fast-deep-equal-5dcd27213b9411fd DEPENDENCY_OF SPDXRef-Package-npm--discordjs-builders-b3069e24f8ea7bf9
+Relationship: SPDXRef-Package-npm-fast-deep-equal-5dcd27213b9411fd DEPENDENCY_OF SPDXRef-Package-npm--sapphire-shapeshift-b5bafde65132818a
+Relationship: SPDXRef-Package-npm-fast-deep-equal-5dcd27213b9411fd DEPENDENCY_OF SPDXRef-Package-npm-discord.js-b86859ba413dd364
+Relationship: SPDXRef-Package-npm--tokenizer-token-5e14b0b53d7d206a DEPENDENCY_OF SPDXRef-Package-npm-token-types-09d2477465a07d5d
+Relationship: SPDXRef-Package-npm--tokenizer-token-5e14b0b53d7d206a DEPENDENCY_OF SPDXRef-Package-npm-strtok3-8571ff3cd514c0de
+Relationship: SPDXRef-Package-npm-combined-stream-6feb2abce081a13b DEPENDENCY_OF SPDXRef-Package-npm-form-data-2358d926ecfb481e
+Relationship: SPDXRef-Package-npm-discord-api-types-715d151bfb01f3fc DEPENDENCY_OF SPDXRef-Package-npm--discordjs-rest-818b2d93f0ccfa9c
+Relationship: SPDXRef-Package-npm-discord-api-types-715d151bfb01f3fc DEPENDENCY_OF SPDXRef-Package-npm--discordjs-builders-b3069e24f8ea7bf9
+Relationship: SPDXRef-Package-npm-discord-api-types-715d151bfb01f3fc DEPENDENCY_OF SPDXRef-Package-npm-discord.js-b86859ba413dd364
+Relationship: SPDXRef-Package-npm--discordjs-collection-76dc68569a0f55f4 DEPENDENCY_OF SPDXRef-Package-npm--discordjs-rest-818b2d93f0ccfa9c
+Relationship: SPDXRef-Package-npm--discordjs-collection-76dc68569a0f55f4 DEPENDENCY_OF SPDXRef-Package-npm-discord.js-b86859ba413dd364
+Relationship: SPDXRef-Package-npm--discordjs-rest-818b2d93f0ccfa9c DEPENDENCY_OF SPDXRef-Package-npm-discord.js-b86859ba413dd364
+Relationship: SPDXRef-Package-npm-strtok3-8571ff3cd514c0de DEPENDENCY_OF SPDXRef-Package-npm-file-type-cd87a8d32027178f
+Relationship: SPDXRef-Package-npm-follow-redirects-8946d0349ba38fe4 DEPENDENCY_OF SPDXRef-Package-npm-axios-cea065e3b54799cc
+Relationship: SPDXRef-Package-npm--sapphire-async-queue-8b2bf1da87955c81 DEPENDENCY_OF SPDXRef-Package-npm--discordjs-rest-818b2d93f0ccfa9c
+Relationship: SPDXRef-Package-npm-inherits-911374ff7f37ba7f DEPENDENCY_OF SPDXRef-Package-npm-readable-stream-bca2bed48e662ddf
+Relationship: SPDXRef-Package-npm-peek-readable-919c1a50f687b4a4 DEPENDENCY_OF SPDXRef-Package-npm-strtok3-8571ff3cd514c0de
+Relationship: SPDXRef-Package-npm-tslib-9a104749435e5508 DEPENDENCY_OF SPDXRef-Package-npm--discordjs-rest-818b2d93f0ccfa9c
+Relationship: SPDXRef-Package-npm-tslib-9a104749435e5508 DEPENDENCY_OF SPDXRef-Package-npm--discordjs-builders-b3069e24f8ea7bf9
+Relationship: SPDXRef-Package-npm-tslib-9a104749435e5508 DEPENDENCY_OF SPDXRef-Package-npm-discord.js-b86859ba413dd364
+Relationship: SPDXRef-Package-npm-readable-web-to-node-stream-9e4c1ca313f67ffb DEPENDENCY_OF SPDXRef-Package-npm-file-type-cd87a8d32027178f
+Relationship: SPDXRef-Package-npm-ts-mixer-a97abc369701bd1f DEPENDENCY_OF SPDXRef-Package-npm--discordjs-builders-b3069e24f8ea7bf9
+Relationship: SPDXRef-Package-npm-util-deprecate-aac5900c84ec45ff DEPENDENCY_OF SPDXRef-Package-npm-readable-stream-bca2bed48e662ddf
+Relationship: SPDXRef-Package-npm--discordjs-builders-b3069e24f8ea7bf9 DEPENDENCY_OF SPDXRef-Package-npm-discord.js-b86859ba413dd364
+Relationship: SPDXRef-Package-npm--sapphire-snowflake-b47aabe36999ba73 DEPENDENCY_OF SPDXRef-Package-npm--discordjs-rest-818b2d93f0ccfa9c
+Relationship: SPDXRef-Package-npm--sapphire-snowflake-b47aabe36999ba73 DEPENDENCY_OF SPDXRef-Package-npm-discord.js-b86859ba413dd364
+Relationship: SPDXRef-Package-npm--sapphire-shapeshift-b5bafde65132818a DEPENDENCY_OF SPDXRef-Package-npm--discordjs-builders-b3069e24f8ea7bf9
+Relationship: SPDXRef-Package-npm-discord.js-b86859ba413dd364 DEPENDENCY_OF SPDXRef-Package-npm-memebot-discord-9f7475803eb5e81d
+Relationship: SPDXRef-Package-npm-ws-bb62c826f7fedc72 DEPENDENCY_OF SPDXRef-Package-npm-discord.js-b86859ba413dd364
+Relationship: SPDXRef-Package-npm-readable-stream-bca2bed48e662ddf DEPENDENCY_OF SPDXRef-Package-npm-readable-web-to-node-stream-9e4c1ca313f67ffb
+Relationship: SPDXRef-Package-npm-delayed-stream-c23340a58ec36159 DEPENDENCY_OF SPDXRef-Package-npm-combined-stream-6feb2abce081a13b
+Relationship: SPDXRef-Package-npm-file-type-cd87a8d32027178f DEPENDENCY_OF SPDXRef-Package-npm--discordjs-rest-818b2d93f0ccfa9c
+Relationship: SPDXRef-Package-npm-axios-cea065e3b54799cc DEPENDENCY_OF SPDXRef-Package-npm-memebot-discord-9f7475803eb5e81d
+Relationship: SPDXRef-Package-npm-mime-types-d035c2d2cba76761 DEPENDENCY_OF SPDXRef-Package-npm-form-data-2358d926ecfb481e
+Relationship: SPDXRef-Package-npm-mime-db-e010d1b3c9ab0c02 DEPENDENCY_OF SPDXRef-Package-npm-mime-types-d035c2d2cba76761
+Relationship: SPDXRef-Package-go-module-golang.org-x-sys-f3a0bd825672e60a DEPENDENCY_OF SPDXRef-Package-go-module-github.com-evanw-esbuild-60f95815a25dfd60
+Relationship: SPDXRef-Package-npm--types-ws-fb3b22561d4b6c8f DEPENDENCY_OF SPDXRef-Package-npm-discord.js-b86859ba413dd364
+Relationship: SPDXRef-Package-npm-token-types-09d2477465a07d5d OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-lodash.uniqwith-0b3d68d936f9eea9 OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-ascii-table-12d7eaaf3a984d05 OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-go-module-github.com-evanw-esbuild-1b18f173f55c2a77 OTHER SPDXRef-File-...esbuild-darwin-64-bin-esbuild-3a2d8574043b0017
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-ieee754-1dc54701f6827996 OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-go-module-stdlib-1de37f82c029486a OTHER SPDXRef-File-...esbuild-darwin-64-bin-esbuild-3a2d8574043b0017
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-go-module-stdlib-209462322553e0bd OTHER SPDXRef-File-node-modules-esbuild-bin-esbuild-06f084fd7c9154ab
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-form-data-2358d926ecfb481e OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-go-module-golang.org-x-sys-240c933d839c1d88 OTHER SPDXRef-File-...esbuild-darwin-64-bin-esbuild-3a2d8574043b0017
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-safe-buffer-28135efb01cb74b9 OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-string-decoder-31e1990d6adabf2b OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-asynckit-3f371bd1625a90e5 OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-undici-4cf9f8e9783c863a OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-lodash.snakecase-4f5acaba51f7e850 OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm--types-node-580b3e08985a5147 OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-fast-deep-equal-5dcd27213b9411fd OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm--tokenizer-token-5e14b0b53d7d206a OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-go-module-github.com-evanw-esbuild-60f95815a25dfd60 OTHER SPDXRef-File-node-modules-esbuild-bin-esbuild-06f084fd7c9154ab
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-github-action-actions-checkout-6c6b4648c07f7f27 OTHER SPDXRef-File-.github-workflows-build-and-deploy.yml-8655c0f19474fdc2
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-combined-stream-6feb2abce081a13b OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-discord-api-types-715d151bfb01f3fc OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm--discordjs-collection-76dc68569a0f55f4 OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm--discordjs-rest-818b2d93f0ccfa9c OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-strtok3-8571ff3cd514c0de OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-follow-redirects-8946d0349ba38fe4 OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm--sapphire-async-queue-8b2bf1da87955c81 OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-binary-windows-kill-8dd17963ecd272f4 OTHER SPDXRef-File-...nodemon-bin-windows-kill.exe-77e0d64a9d2557d1
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-inherits-911374ff7f37ba7f OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-peek-readable-919c1a50f687b4a4 OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-tslib-9a104749435e5508 OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-readable-web-to-node-stream-9e4c1ca313f67ffb OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-memebot-discord-9f7475803eb5e81d OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-ts-mixer-a97abc369701bd1f OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-util-deprecate-aac5900c84ec45ff OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm--discordjs-builders-b3069e24f8ea7bf9 OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm--sapphire-snowflake-b47aabe36999ba73 OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm--sapphire-shapeshift-b5bafde65132818a OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-discord.js-b86859ba413dd364 OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-ws-bb62c826f7fedc72 OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-readable-stream-bca2bed48e662ddf OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-delayed-stream-c23340a58ec36159 OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-file-type-cd87a8d32027178f OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-axios-cea065e3b54799cc OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-mime-types-d035c2d2cba76761 OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-github-action-actions-checkout-d6b6be5881828f41 OTHER SPDXRef-File-....github-workflows-release.yml-d135e7a28a13f952
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-github-action-docker-login-action-d70a6af7ffbe2f77 OTHER SPDXRef-File-.github-workflows-build-and-deploy.yml-8655c0f19474fdc2
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm-mime-db-e010d1b3c9ab0c02 OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-github-action-docker-build-push-action-e52fdfd5bbbba453 OTHER SPDXRef-File-.github-workflows-build-and-deploy.yml-8655c0f19474fdc2
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-github-action-docker-setup-buildx-action-ee21302d2ce44afc OTHER SPDXRef-File-.github-workflows-build-and-deploy.yml-8655c0f19474fdc2
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-go-module-golang.org-x-sys-f3a0bd825672e60a OTHER SPDXRef-File-node-modules-esbuild-bin-esbuild-06f084fd7c9154ab
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-npm--types-ws-fb3b22561d4b6c8f OTHER SPDXRef-File-package-lock.json-fd71c2238fc07657
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-Package-github-action-actions-setup-node-fbf56f2363c217f4 OTHER SPDXRef-File-....github-workflows-release.yml-d135e7a28a13f952
+RelationshipComment: evident-by: indicates the package's existence is evident by the given file
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm--discordjs-builders-b3069e24f8ea7bf9
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm--discordjs-collection-76dc68569a0f55f4
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm--discordjs-rest-818b2d93f0ccfa9c
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm--sapphire-async-queue-8b2bf1da87955c81
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm--sapphire-shapeshift-b5bafde65132818a
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm--sapphire-snowflake-b47aabe36999ba73
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm--tokenizer-token-5e14b0b53d7d206a
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm--types-node-580b3e08985a5147
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm--types-ws-fb3b22561d4b6c8f
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-github-action-actions-checkout-d6b6be5881828f41
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-github-action-actions-checkout-6c6b4648c07f7f27
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-github-action-actions-setup-node-fbf56f2363c217f4
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-ascii-table-12d7eaaf3a984d05
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-asynckit-3f371bd1625a90e5
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-axios-cea065e3b54799cc
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-combined-stream-6feb2abce081a13b
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-delayed-stream-c23340a58ec36159
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-discord-api-types-715d151bfb01f3fc
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-discord.js-b86859ba413dd364
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-github-action-docker-build-push-action-e52fdfd5bbbba453
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-github-action-docker-login-action-d70a6af7ffbe2f77
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-github-action-docker-setup-buildx-action-ee21302d2ce44afc
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-fast-deep-equal-5dcd27213b9411fd
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-file-type-cd87a8d32027178f
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-follow-redirects-8946d0349ba38fe4
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-form-data-2358d926ecfb481e
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-go-module-github.com-evanw-esbuild-1b18f173f55c2a77
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-go-module-github.com-evanw-esbuild-60f95815a25dfd60
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-go-module-golang.org-x-sys-240c933d839c1d88
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-go-module-golang.org-x-sys-f3a0bd825672e60a
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-ieee754-1dc54701f6827996
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-inherits-911374ff7f37ba7f
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-lodash.snakecase-4f5acaba51f7e850
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-lodash.uniqwith-0b3d68d936f9eea9
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-memebot-discord-9f7475803eb5e81d
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-mime-db-e010d1b3c9ab0c02
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-mime-types-d035c2d2cba76761
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-peek-readable-919c1a50f687b4a4
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-readable-stream-bca2bed48e662ddf
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-readable-web-to-node-stream-9e4c1ca313f67ffb
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-safe-buffer-28135efb01cb74b9
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-go-module-stdlib-1de37f82c029486a
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-go-module-stdlib-209462322553e0bd
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-string-decoder-31e1990d6adabf2b
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-strtok3-8571ff3cd514c0de
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-token-types-09d2477465a07d5d
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-ts-mixer-a97abc369701bd1f
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-tslib-9a104749435e5508
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-undici-4cf9f8e9783c863a
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-util-deprecate-aac5900c84ec45ff
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-binary-windows-kill-8dd17963ecd272f4
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-Package-npm-ws-bb62c826f7fedc72
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-File-.github-workflows-build-and-deploy.yml-8655c0f19474fdc2
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-File-...esbuild-darwin-64-bin-esbuild-3a2d8574043b0017
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-File-node-modules-esbuild-bin-esbuild-06f084fd7c9154ab
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-File-node-modules-fsevents-fsevents.node-caf8d43bd5fa2c58
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-File-...nodemon-bin-windows-kill.exe-77e0d64a9d2557d1
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-File-....github-workflows-release.yml-d135e7a28a13f952
+Relationship: SPDXRef-DocumentRoot-Directory-. CONTAINS SPDXRef-File-package-lock.json-fd71c2238fc07657
+Relationship: SPDXRef-DOCUMENT DESCRIBES SPDXRef-DocumentRoot-Directory-.
+
