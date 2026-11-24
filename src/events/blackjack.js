@@ -156,8 +156,8 @@ export default {
 
             if (!hasSplit) {
                 const playerScore = calculateScore(hands[0]);
-                let resultText = '';
-                let color = 'Red';
+                let resultText;
+                let color;
 
                 if (playerScore > 21) {
                     resultText = '💥 **BUST!** You went over 21. The bot wins.';
@@ -197,7 +197,7 @@ export default {
 
                 for (let i = 0; i < hands.length; i++) {
                     const hScore = calculateScore(hands[i]);
-                    let res = '';
+                    let res;
 
                     if (hScore > 21) {
                         res = '💥 **BUST!** (Lost)';
@@ -235,8 +235,8 @@ export default {
                     inline: true
                 });
 
-                let summary = '';
-                let finalColor = 'Red';
+                let summary;
+                let finalColor;
                 if (anyWin) {
                     summary = '🎉 **Game Over!** You won on your split hand(s)!';
                     finalColor = 'Green';
@@ -262,7 +262,7 @@ export default {
             const fields = [];
             for (let i = 0; i < hands.length; i++) {
                 const score = calculateScore(hands[i]);
-                let label = '';
+                let label;
                 if (i === currentHandIdx) {
                     label = ' 👉 **[Playing]**';
                 } else if (i < currentHandIdx) {
