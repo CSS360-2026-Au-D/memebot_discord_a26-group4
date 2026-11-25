@@ -7,7 +7,8 @@
     "start": "npm run build && node -r dotenv/config build/app.js",
     "dev": "nodemon",
     "prod": "node build/app.js",
-    "test": "mocha -r esbuild-runner/register ./tests/*.spec.js --exit"
+    "test": "mocha -r esbuild-runner/register ./tests/*.spec.js --exit",
+    "lint": "eslint ."
   },
   "keywords": [
     "discord",

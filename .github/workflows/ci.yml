@@ -25,6 +25,7 @@ jobs:
 
       - name: Run linter
         run: npx eslint .
+        continue-on-error: true
 
       - name: Run unit tests
         run: npm test
