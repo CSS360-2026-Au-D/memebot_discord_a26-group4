@@ -1,7 +1,6 @@
 import { EmbedBuilder, userMention } from "discord.js";
 import { addUserToDataBase } from "../helpers/manDataBase";
 const CHANNEL_NAME = process.env.CHANNEL_NAME;
-const MEME_URL = process.env.MEME_URL || "";
 
 const event = {
   name: "guildMemberAdd",
@@ -19,18 +18,6 @@ const event = {
   },
 };
 
-const getWelcomeMessage = (userId) => {
-  /*
-    this function returns a welcome message.
-    Play around with the code here and customise the welcome message.
-  */
-  return {
-    content: `Welcome ${userMention(userId)},
-    Hope you have great time here!
-  `,
-  };
-};
-
 //
 const getWelcomeMessageWithMeme = async (userId) => {
   /*
@@ -42,8 +29,8 @@ const getWelcomeMessageWithMeme = async (userId) => {
   const meme = await getMeme();
 
   const welcomeMessages = [
-    "Howdy new member here\'s a meme for you to enjoy!",
-    "Here\'s a meme to brighten your day!",
+    "Howdy new member here's a meme for you to enjoy!",
+    "Here's a meme to brighten your day!",
     "Were happy to see you join the server!",
     "We have a card game bot! try /game to play!"
   ];
