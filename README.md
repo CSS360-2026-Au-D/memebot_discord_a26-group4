@@ -19,9 +19,9 @@ Built for CSS 360 by the Gracious Badgers group.
 
 | Command | Description | Example |
 |---|---|---|
-| `/command <arg>` | Describe what it does | `/command hello` |
 | `/badger-den` | Starts the Badger Den game.  | `/badger-den`  |
 | `/blackjack`  | Starts a game of Blackjack. | `/blackjack`   |
+| `/poker` | Starts a game of Poker | `/poker` |
 ## Tech Stack
 
 - **Language:** Javascript
@@ -61,9 +61,10 @@ CLIENT_ID=your-application-client-id
 Make sure `.env` is listed in `.gitignore`.
 and to do node src/slashCommands.js in the terminal - to register commands (need to run this whenever any slash command name changes or new ones get added)
 
-### 4. Run the Bot
+### 4. Run the Bot and Register the Commands
 
 ```bash
+node src/slashCommands.js
 npm start
 ```
 
